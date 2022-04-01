@@ -1,0 +1,1 @@
+"Id[String]","BuffId[String]","CanReceive[Bool]","OverrideBuffDuration[Bool]","BuffDuration[Float]","ValidAddBuffToolTypes[String]","ToolsConsumedWhenAdded[Int]","InteractionText[String]","CanOutput[Bool]","RequiredBuffs[String]","Radius[Float]","AddAmount[Float]"

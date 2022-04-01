@@ -1,0 +1,8 @@
+"Id[String]","Notes[String]","DropForAllPlayers[Bool]","SinglePlayerDrops[Bool]","MaxPickupsPerDrop[Int]","DropMinDistance[Float]","DropMaxDistance[Float]","DropTimeoutSeconds[Float]","DropItemPickupTemplate[Asset Reference]"
+"Community","All Players See - All Players Get","True","False","3","50.0","150.0","60.0","6F94B160199D987E"
+"Community 2","All Players See + Get. For exact location drops.","True","False","3","0.0","0.0","60.0","6F94B160199D987E"
+"Competitive","All Players See - One Player Gets","True","True","3","50.0","150.0","60.0","6F94B160199D987E"
+"Solo","Acting Player Sees - Acting Player Gets","False","False","3","50.0","150.0","60.0","6F94B160199D987E"
+"Inventory","All Players See - One Player Gets","True","True","1","50.0","150.0","180.0","D561C2A409BBE00F"
+"Crafting","Acting Player Sees - Acting Player Gets","False","False","1","50.0","150.0","180.0","6F94B160199D987E"
+"Store","Acting Player Sees - Acting Player Gets","False","False","1","50.0","150.0","180.0","6F94B160199D987E"

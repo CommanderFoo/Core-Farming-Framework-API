@@ -1,0 +1,7 @@
+"Id[String]","UniqueStorageId[Int]","Static[Asset Reference]","Respawn[Bool]","RespawnPlayerMinDistance[Float]","RespawnPlayerMaxDistance[Float]","RespawnWhenNotVisible[Bool]","RandomSpawn[Bool]","RandomSpawnPercent[Float]"
+"Front Yard Debris","1","98A5F4627210DC76","False","0.0","0.0","False","False","0.0"
+"Back Yard Debris","2","3049FFB75BFB7DDA","False","0.0","0.0","False","False","0.0"
+"Forest Trees","3","291A43B388D665E5","True","500.0","5000.0","True","False","0.0"
+"Forest Random","4","50912641CD01CE6E","True","500.0","5000.0","True","True","10.0"
+"Quarry Rocks","5","2498D1A8410DF710","True","500.0","5000.0","True","False","0.0"
+"Quarry Fossils","6","A335613FE34792A1","True","500.0","5000.0","True","True","10.0"

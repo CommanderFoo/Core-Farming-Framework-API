@@ -1,0 +1,2 @@
+"Id[String]","Name[String]","StorageKey[Net Reference]","StartingAmount[Int]","MaxAmount[Int]","VerboseLogs[Bool]","DropTemplate[Asset Reference]","DropItemPickupTemplate[Asset Reference]","IconCameraId[String]","IconAsset[Asset Reference]","IsKitbashed2DIcon[Bool]","Is3DIcon[Bool]","IsImageIcon[Bool]"
+"coins","Coins","","500","0","True","FB760E01550FD694","6F94B160199D987E","","F5BC7F86F2771790","False","False","True"

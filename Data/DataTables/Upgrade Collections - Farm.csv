@@ -1,0 +1,5 @@
+"Id[String]","IsLinear[Bool]","StorageKey[Net Reference]","UpgradeIds[String]"
+"House","True","","Damaged House, Starter House, Tall House"
+"Gate","True","","Damaged Gate, Starter Gate"
+"Fruit Stand","True","","Damaged Fruit Stand, Starter Fruit Stand"
+"Farm Land","False","","Locked Land 1, Locked Land 2, Locked Land 3, Locked Land 4, Locked Land 5, Locked Land 6, Land Expansion 1, Land Expansion 2, Land Expansion 3, Land Expansion 4, Land Expansion 5, Land Expansion 6"

@@ -1,0 +1,3 @@
+"Id[String]","Name[String]","UniqueStorageId[Int]","Duration[Float]","Permanent[Bool]","MaxStacks[Int]"
+"Watered","Watered","1","86400.0","False","1"
+"Fertilized","Fertilized","2","0.0","True","1"

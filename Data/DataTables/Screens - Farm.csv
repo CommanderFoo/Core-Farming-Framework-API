@@ -1,0 +1,6 @@
+"Id[String]","ScreenTemplate[Asset Reference]","ScreenToggleButton[Asset Reference]","OpenBinding[String]","CloseBinding[String]","ShowCursor[Bool]"
+"Crafting Screen","59285DD608CFE736","0BADBADBADBADBAD","Open Crafting Screen","Close Crafting Screen","True"
+"Purchase Item Screen","72694C51BE4A6E1E","0BADBADBADBADBAD","","","True"
+"Purchase Screen","AF239B24E97A3760","0BADBADBADBADBAD","","","True"
+"Sell Screen","AF239B24E97A3760","0BADBADBADBADBAD","","","True"
+"Item Details Screen","77707F50D2241C12","0BADBADBADBADBAD","","","True"

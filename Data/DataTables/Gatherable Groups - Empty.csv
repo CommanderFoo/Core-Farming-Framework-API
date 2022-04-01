@@ -1,0 +1,1 @@
+"Id[String]","UniqueStorageId[Int]","Static[Asset Reference]","Respawn[Bool]","RespawnPlayerMinDistance[Float]","RespawnPlayerMaxDistance[Float]","RespawnWhenNotVisible[Bool]","RandomSpawn[Bool]","RandomSpawnPercent[Float]"

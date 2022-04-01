@@ -1,0 +1,6 @@
+"Id[String]","StoreName[String]","StorageKey[Net Reference]","Purchaseables[String]","Sellables[String]","PurchaseScreenOverrideTemplate[Asset Reference]","SellScreenOverrideTemplate[Asset Reference]"
+"Penny Produce","Penny Produce","","","produce","0BADBADBADBADBAD","0BADBADBADBADBAD"
+"Sunshine Seeds","Sunshine Seeds","","seeds","","0BADBADBADBADBAD","0BADBADBADBADBAD"
+"Tool Truck","Tool Truck","","tools, Metal, farming, upgrade","materials, tools, farming, crafts, other","0BADBADBADBADBAD","0BADBADBADBADBAD"
+"Better Breads","Better Breads","","","foods","0BADBADBADBADBAD","0BADBADBADBADBAD"
+"Fruit Stand","Fruit Stand","","","seeds, other, produce, materials, tools, farming, crafts, foods","0BADBADBADBADBAD","0BADBADBADBADBAD"

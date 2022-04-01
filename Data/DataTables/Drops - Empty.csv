@@ -1,0 +1,1 @@
+"Id[String]","Notes[String]","ItemId[String]","CurrencyId[String]","UpgradeId[String]","MinAmount[Int]","MaxAmount[Int]","WeightedChance[Int]","PercentChance[Float]"

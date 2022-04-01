@@ -1,0 +1,1 @@
+"Id[String]","Name[String]","StorageKey[Net Reference]","StartingAmount[Int]","MaxAmount[Int]","VerboseLogs[Bool]","DropTemplate[Asset Reference]","DropItemPickupTemplate[Asset Reference]","IconCameraId[String]","IconAsset[Asset Reference]","IsKitbashed2DIcon[Bool]","Is3DIcon[Bool]","IsImageIcon[Bool]"

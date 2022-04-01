@@ -1,0 +1,3 @@
+"Id[String]","MaxAmount[Int]","PerPlaceableLimitIds[String]"
+"FrontYardPlaceables","40","Front Yard Soil, Front Yard Chests"
+"BackYardPlaceables","260","Back Yard Soil, Back Yard Chests"

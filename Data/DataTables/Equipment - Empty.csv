@@ -1,0 +1,1 @@
+"Id[String]","ToolType[String]","ActionSeconds[Float]","DoesToggle[Bool]","AutoRepeat[Bool]","EquipmentStance[String]","RotateCWBinding[String]","RotateCCWBinding[String]","RotationSpeed[Float]","APIInteractionModule[Asset Reference]","InteractionDistance[Float]","HologramMaterial[Asset Reference]","CanPlaceColor[Color]","CannotPlaceColor[Color]","PlaceableId[String]"

@@ -1,0 +1,4 @@
+"Id[String]","ItemId[String]","OverrideScreenId[String]","AllowAllRecipes[Bool]","Recipes[String]","DropInWorld[Bool]","DropBehaviorId[String]"
+"Global","","","False","global, seed","True","Crafting"
+"Crafting Table","Crafting Table","","False","global, seed, tool, placeable, Soybeans, Green Soybeans","True","Crafting"
+"Wood Cook Stove","Wood Cook Stove","","False","food","True","Crafting"
