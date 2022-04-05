@@ -10,6 +10,6 @@ title: Time Simulator
 
 | Class Function Name | Return Type | Description | Tags |
 | ------------------- | ----------- | ----------- | ---- |
-| `RegisterSystem()` | `None` | Add a new system. | None |
-| `UnregisterSystem()` | `None` | Unregisters a system. | None |
+| `RegisterSystem(any, TimeSimulatorFunctionTable)` | `None` | Add a new system. | None |
+| `UnregisterSystem(any)` | `None` | Unregisters a system. | None |
 | `UpdateToTime()` | `None` | None | None |

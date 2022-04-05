@@ -16,4 +16,4 @@ title: Real Time
 | `IsValid()` | `boolean` | If this is false GetRealTime() will still return a correct value it just wont be server authorized. | None |
 | `SyncronizeEpoch()` | `None` | Call this on the server to refresh the difference between epoch time and time(). | None |
 | `UpdateAllPlayersEpoch()` | `None` | Updates all the players with the current offset between epoch time and server time. | None |
-| `UpdatePlayerEpoch()` | `None` | Update a player so they know the offset between epoch time and server time. | None |
+| `UpdatePlayerEpoch(string|table)` | `None` | Update a player so they know the offset between epoch time and server time. | None |

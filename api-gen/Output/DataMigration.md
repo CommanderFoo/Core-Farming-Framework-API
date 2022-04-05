@@ -15,9 +15,9 @@ To deal with this potential problem, we have a basic Data Migration system that 
 | Class Function Name | Return Type | Description | Tags |
 | ------------------- | ----------- | ----------- | ---- |
 | `GetCurrentVersion()` | `None` | None | None |
-| `MigrateCurrencyData()` | `boolean` | Migrates Currency data between versions if needed. | None |
-| `MigrateInventoryData()` | `boolean` | Migrates Inventory data between versions if needed. | None |
-| `MigratePlaceableData()` | `boolean` | Migrates Placeable data between versions if needed. | None |
+| `MigrateCurrencyData(Player, table, string)` | `boolean` | Migrates Currency data between versions if needed. | None |
+| `MigrateInventoryData(Player, table, string)` | `boolean` | Migrates Inventory data between versions if needed. | None |
+| `MigratePlaceableData(table, string, table, table)` | `boolean` | Migrates Placeable data between versions if needed. | None |
 | `MigrateUpgradeData()` | `None` | None | None |
 | `SetCurrencyAPI()` | `None` | None | None |
 | `SetInventoryAPI()` | `None` | None | None |

@@ -48,10 +48,21 @@ class API_Gen {
 			if(current_line.match(/^---@return/)){
 				returns = returns.concat(current_line.replace(/^---@return\s?/i, "").replace("\r", "").split("|"));
 			} else if(current_line.match(/^---@param/i)){
+				let type = "";
+
+				if(current_line.match("table<")){
+					type = "table<" + current_line.split("table<")[1].split(">")[0] + ">";
+				} else if(current_line.match("func<")){
+					type = "func<" + current_line.split("func<")[1].split(">")[0] + ">";
+				} else {
+					type = current_line.replace(/^---@param\s?/i, "").replace("\r", "").split(" ")[1];
+				}
+
 				params.push({
 					
 					name: current_line.replace(/^---@param\s?/i, "").replace("\r", "").split(" ")[0],
-					types: current_line.replace(/^---@param\s?/i, "").replace("\r", "").split(" ")[1].split("|"),
+					type: type.replace("<", "&lt;").replace(">", "&gt;"),
+					param_index: index
 
 				});
 			} else if(current_line.match(/^---[^@]/) && !current_line.match("---comment")){
@@ -65,7 +76,7 @@ class API_Gen {
 		return {
 
 			comment: comment.reverse(),
-			params,
+			params: params.reverse(),
 			returns
 
 		};
@@ -117,6 +128,10 @@ class API_Gen {
 		let events = []
 		let events_part = content.split(key + "EVENTS")[1];
 
+		if(!events_part){
+			events_part = content.split("EVENTS")[1];
+		}
+	
 		if(events_part && events_part.length > 0){
 			let lines = events_part.split("\n");
 			
@@ -141,12 +156,12 @@ class API_Gen {
 							ret_str += ", ";
 						}
 					}
-					
+
 					if(!invalid){
 						events.push({
 
 							event: line.match(/Events\.(\w+)/)[1],
-							ret: ret_str,
+							ret: ret_str.replace("<", "&lt;").replace(">", "&gt;"),
 							tag: lines[index + 2].match(/ - (Server|Client|Server \/ Client)/)[1],
 							desc: lines[index + 4].split("- ")[1]
 
@@ -156,6 +171,12 @@ class API_Gen {
 			});
 		}
 
+		events.sort((a, b) => {
+
+			return (a.event > b.event)? 1 : -1;
+
+		});
+
 		return events;
 	}
 
@@ -164,7 +185,7 @@ class API_Gen {
 
 		events.forEach((entry, index) => {
 			output += "| `" + entry.event + "` ";
-			output += "| Event<" + entry.ret + "> ";
+			output += "| Event&lt;" + entry.ret + "&gt; ";
 			output += "| " + entry.desc.replace(/[\r\n]+$/, "") + " ";
 
 			if(entry.tag && entry.tag.length){
@@ -187,7 +208,33 @@ class API_Gen {
 		let output = this.get_method_table_header();
 
 		methods.forEach((entry, index) => {
-			output += "| `" + entry.name + "()` ";
+			let params = "";
+
+			//console.log(entry.params)
+			//if(entry.name == "AddToInventory"){
+				entry.params.forEach((param, param_index) => {
+					params += param.type + ", ";
+				});
+			//}
+
+			// entry.params.forEach((param, param_index) => {
+				
+			// 	if(param.type && param.type.length){
+			// 		if(param.type.match("<")){
+			// 			params += param.type.replace(/^.+?</, "<").split(">")[0] + ">, ";
+			// 		} else if(param.type.match("|")){
+			// 			//console.log(entry.name, param.type)
+			// 			params += param.type.replace(/^.+? (\w)/, "$1")[1].split("|").join(", ");
+			// 		} else {
+			// 			params += param.type.split(" ")[0];
+			// 		}
+			// 	}
+
+			// 	params = params.replace(/, $/, "");
+			// });
+
+			params = params.replace(/, ?$/, "");
+			output += "| `" + entry.name + "(" + params + ")` ";
 		
 			if(entry.returns && entry.returns.length > 0){
 				output += "| ";
@@ -195,7 +242,7 @@ class API_Gen {
 				entry.returns.forEach((value, i) => {
 					if(value != "nil"){
 						if(value.match(/\[\]$/)){
-							output += "`Array<" + value.split("[")[0] + ">`";
+							output += "`Array&lt;" + value.split("[")[0] + "&gt;`";
 						} else {
 							output += "`" + value + "`";
 						}
@@ -312,7 +359,7 @@ The Farming Framework brings the power of the Producers, Buffs, and Areas to mak
 			}
 		}
 
-		//await API_Gen.build_doc(cwd, "APIActiveCoreObjects.lua", readme_map)
+	//	await API_Gen.build_doc(cwd, "APIInventory.lua", readme_map)
 
 		writeFileSync("./namespace_list.txt", this.namespaces, { flag: "w+" });
 		this.build_index()
@@ -365,13 +412,6 @@ The Farming Framework brings the power of the Producers, Buffs, and Areas to mak
 				})
 				
 				example_code = example_code.join("\n").replace(/\t/g, "    ");
-
-				// console.log(events)
-				// console.log(methods)
-				// console.log(see_also)
-				// console.log(desc)
-				// console.log(example_code)
-
 				examples.push({
 
 					events,

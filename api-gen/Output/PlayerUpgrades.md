@@ -17,8 +17,8 @@ title: Player Upgrades
 | `GetUpgradeData()` | `None` | None | None |
 | `HasUpgrade()` | `None` | None | None |
 | `IsPrerequisitesMet()` | `None` | None | None |
-| `IsUpgradeLoaded()` | `boolean` | Upgrade is loaded for the player. | None |
-| `IsUpgradeRegistered()` | `boolean` | Upgrade is registered with the system. | None |
+| `IsUpgradeLoaded(string, string)` | `boolean` | Upgrade is loaded for the player. | None |
+| `IsUpgradeRegistered(string)` | `boolean` | Upgrade is registered with the system. | None |
 | `RegisterUpgradeCollection()` | `None` | None | None |
 | `RemoveUpgrade()` | `None` | None | None |
 | `ResetUpgrades()` | `None` | None | None |

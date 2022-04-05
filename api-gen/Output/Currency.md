@@ -11,23 +11,35 @@ Currency is a drop in system that provides ready to go Player Currency managemen
 Any amount of Currencies can be added to a game and you can use them for more than just visible currency amounts.
 For example, a Currency could be used to track the scores in a game.
 
+## Events
+
+| Event Name | Return Type | Description | Tags |
+| ---------- | ----------- | ----------- | ---- |
+| `CurrencyAdded` | Event&lt;Player, currencyId, amountAdded&gt; | Sent each time an amount is added to a Currency for a Player. This event sends on the server as well as the | Server |
+| `CurrencyLoaded` | Event&lt;Player, currencyId&gt; | Sent when an Currency is loaded on both server and the client for the Player that loaded the Currency. | Server |
+| `CurrencyRegistered` | Event&lt;currencyId&gt; | Sent when an Currency is registered on the server. | Server |
+| `CurrencyRemoved` | Event&lt;Player, currencyId, amountRemoved&gt; | Sent each time an amount is removed from a Currency for a Player. This event sends on the server as well as | Server |
+| `CurrencySaved` | Event&lt;Player, currencyId&gt; | Sent on the server each time an Currency for a Player is saved. | Server |
+| `CurrencySet` | Event&lt;Player, currencyId, amountSet&gt; | Sent each time a Currency is set to a specific amount for a Player. This event sends on the server as well as | Server |
+| `CurrencyUnregistered` | Event&lt;currencyId&gt; | Sent when an Currency is unregistered on the server. | Server |
+
 ## Functions
 
 | Class Function Name | Return Type | Description | Tags |
 | ------------------- | ----------- | ----------- | ---- |
-| `AddCurrencyAmount()` | `boolean` | Adds an amount to a Currency for a Player. Returns true if successful. | None |
+| `AddCurrencyAmount(Player, string, integer, boolean)` | `boolean` | Adds an amount to a Currency for a Player. Returns true if successful. | None |
 | `GetCurrencies()` | `table` | Returns all registered Currencies. | None |
-| `GetCurrencyAmount()` | `integer` | Returns the amount of a Currency that a Player has. | None |
-| `GetCurrencyIdFromKey()` | `string` | Returns the Currency id associated with a Currency key. | None |
-| `GetCurrencyKey()` | `string` | Returns a key used for Storage and networking. | None |
-| `GetSetting()` | `any` | Returns a setting value for a Currency, or a default value if the setting cannot be found. | None |
-| `HasRoomForCurrencies()` | `boolean` | Returns true if the list of Currencies and amounts can fit within their maximums. | None |
-| `HasRoomForCurrency()` | `boolean` | Returns true if there is enough room in a Currency to add an amount to it. | None |
-| `HasRoomForCurrencyFromDrops()` | `boolean` | Returns true if a set of Drops can be added to one or more Currencies. | None |
-| `IsCurrencyKey()` | `boolean` | Returns true if the key is a Currency key. | None |
-| `IsCurrencyLoaded()` | `boolean` | Returns true if the Currency has been loaded for the Player. | None |
-| `IsCurrencyRegistered()` | `boolean` | Returns true if a Currency is registered. | None |
-| `RegisterCurrency()` | `None` | Server Only. Registers a currency. | None |
-| `RemoveCurrencyAmount()` | `boolean` | Removes an amount from a Currency for a Player. Returns true if successful. | None |
-| `SetCurrencyAmount()` | `boolean` | Sets a Currency to an amount for a Player. Returns true if successful. | None |
-| `UnregisterCurrency()` | `None` | Server Only. Unregisters a Currency. | None |
+| `GetCurrencyAmount(Player, string)` | `integer` | Returns the amount of a Currency that a Player has. | None |
+| `GetCurrencyIdFromKey(string)` | `string` | Returns the Currency id associated with a Currency key. | None |
+| `GetCurrencyKey(string)` | `string` | Returns a key used for Storage and networking. | None |
+| `GetSetting(string, CurrencySetting)` | `any` | Returns a setting value for a Currency, or a default value if the setting cannot be found. | None |
+| `HasRoomForCurrencies(Player, table&lt;string, integer&gt;)` | `boolean` | Returns true if the list of Currencies and amounts can fit within their maximums. | None |
+| `HasRoomForCurrency(Player, string, integer)` | `boolean` | Returns true if there is enough room in a Currency to add an amount to it. | None |
+| `HasRoomForCurrencyFromDrops(Player, DropResults)` | `boolean` | Returns true if a set of Drops can be added to one or more Currencies. | None |
+| `IsCurrencyKey(string)` | `boolean` | Returns true if the key is a Currency key. | None |
+| `IsCurrencyLoaded(Player, string)` | `boolean` | Returns true if the Currency has been loaded for the Player. | None |
+| `IsCurrencyRegistered(string)` | `boolean` | Returns true if a Currency is registered. | None |
+| `RegisterCurrency(string)` | `None` | Server Only. Registers a currency. | None |
+| `RemoveCurrencyAmount(Player, string, integer, boolean)` | `boolean` | Removes an amount from a Currency for a Player. Returns true if successful. | None |
+| `SetCurrencyAmount(Player, string, integer, boolean)` | `boolean` | Sets a Currency to an amount for a Player. Returns true if successful. | None |
+| `UnregisterCurrency(string)` | `None` | Server Only. Unregisters a Currency. | None |

@@ -10,8 +10,8 @@ title: Area Loaders
 
 | Class Function Name | Return Type | Description | Tags |
 | ------------------- | ----------- | ----------- | ---- |
-| `GetAreaLoaderState()` | `table` | Returns the state for a specific AreaLoader. | None |
-| `GetLoadersForArea()` | `table` | Returns all AreaLoaders associated with a specific Area. | None |
-| `LoadAreaLoader()` | `None` | Loads a specific AreaLoader. | None |
-| `RegisterAreaLoader()` | `None` | Registers an AreaLoader. | None |
-| `UnloadAreaLoader()` | `None` | Unloads a specific AreaLoader. | None |
+| `GetAreaLoaderState(string)` | `table` | Returns the state for a specific AreaLoader. | None |
+| `GetLoadersForArea(string)` | `table` | Returns all AreaLoaders associated with a specific Area. | None |
+| `LoadAreaLoader(string)` | `None` | Loads a specific AreaLoader. | None |
+| `RegisterAreaLoader(string, table)` | `None` | Registers an AreaLoader. | None |
+| `UnloadAreaLoader(string)` | `None` | Unloads a specific AreaLoader. | None |

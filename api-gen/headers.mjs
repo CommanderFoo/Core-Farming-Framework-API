@@ -47,9 +47,9 @@ The Icon Generator is a drop in component that will render 3D icons for use in U
 
 The Icon Generator can currently only be used via lua. You will need the following to successfully render a 3D icon:
 
-	* A template of your object sized and oriented correctly to fit in the Icon Generators camera bounds.
-	* A UIImage to display the rendered icon with.
-	* A client script that calls the Icon Manager API to render the icon to the image.
+* A template of your object sized and oriented correctly to fit in the Icon Generators camera bounds.
+* A UIImage to display the rendered icon with.
+* A client script that calls the Icon Manager API to render the icon to the image.
 
 The Icon Generator is only meant for use with static "single shot" icons. There is currently no support for live captures.
 
@@ -85,15 +85,15 @@ Lots can even be combined with Areas to let you create pools of Area/Lots that d
 Headers["Producers _ Buffs"] = `
 The Producers system allows you to build objects that take an input, change over time and generate an output. They were designed with farming / crops in mind, but can be used for a multitude of other cases. Some ideas:
 
-	1. A corn plant that grows over time and produces some corn. If not harvested in time it withers and dies.
-	2. A gas engine that can be filled, runs until it's empty and then stops.
-	3. A building that takes time to become fully constructed. Once constructed it generates currency periodically.
+1. A corn plant that grows over time and produces some corn. If not harvested in time it withers and dies.
+2. A gas engine that can be filled, runs until it's empty and then stops.
+3. A building that takes time to become fully constructed. Once constructed it generates currency periodically.
 
 When mixed with the Buffs system these examples can become even more interesting:
 
-	1. A corn plant that needs a "watered" buff to grow.
-	2. A gas engine that, when running, emits a "power" buff that allows other Producers to progress.
-	3. A building that requires the "power" buff to generate currency. While generating currency it emits a "happiness" buff that affects other gameplay.
+1. A corn plant that needs a "watered" buff to grow.
+2. A gas engine that, when running, emits a "power" buff that allows other Producers to progress.
+3. A building that requires the "power" buff to generate currency. While generating currency it emits a "happiness" buff that affects other gameplay.
 
 Like Gatherables, Producers make use of the Replicator functionality. This means they use 0 networked objects and run fairly efficiently at scale. Gatherables are more efficient when you wants many objects in your scene, so it becomes a choice between the two systems that depends on how much functionality you need vs. efficiency.
 
