@@ -32,8 +32,8 @@ templates loaded into client, server or static contexts and more.
 | `FindAreaByAncestors(CoreObject)` | `string`,  | Locates an Area by searching upward from the provided CoreObject and returns the Area Id if found. | None |
 | `FindAreaByAssignKey(string)` | `string`,  | Returns and Area Id for an Area that matches the provided assign key. | None |
 | `FindAreaByName(string)` | `string`,  | Returns and Area Id for an Area that matches the provided name. | None |
-| `GetAllAreas()` | `Array&lt;string&gt;` | Returns all registered Areas. | None |
-| `GetAllAssignableAreas(string)` | `Array&lt;string&gt;` | Returns all Area ids under a specific Assignable Area Group. | None |
+| `GetAllAreas()` | `Array<string>` | Returns all registered Areas. | None |
+| `GetAllAssignableAreas(string)` | `Array<string>` | Returns all Area ids under a specific Assignable Area Group. | None |
 | `GetAndAssignArea(string, string|nil, string|nil)` | `string`,  | Given a key, this function will either find an 'assignable' area that has the same key, or find an empty 'assignable' area and assign it to this key. Returns the Area Id if one is found or assigned. | None |
 | `GetArea(string)` | `table` | Returns an Area. | None |
 | `GetAreaState(string)` | `table`,  | Returns the state of an Area. | None |

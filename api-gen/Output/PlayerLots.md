@@ -18,17 +18,17 @@ Lots can even be combined with Areas to let you create pools of Area/Lots that d
 | ------------------- | ----------- | ----------- | ---- |
 | `CanOwnLot(string, string, boolean)` | `boolean` | Returns true if the Player can own the Lot in question. | None |
 | `ClearPlayerLotSaveData(string)` | `None` | Clears save data for a Lot. | None |
-| `FindAvailableLots(string|nil, boolean)` | `Array&lt;string&gt;` | Finds all the lots that aren't 'owned' by any Players, or that are owned by offline Players. | None |
+| `FindAvailableLots(string|nil, boolean)` | `Array<string>` | Finds all the lots that aren't 'owned' by any Players, or that are owned by offline Players. | None |
 | `FindLotByAncestors(CoreObject)` | `string` | Finds the id of the Lot this core object is contained inside. | None |
 | `FindLotForOwner(string, string|nil)` | `string` | Find the id of the first Lot for a Player that optionally matches the provided Lot type. | None |
 | `FindLotReplicator(string)` | `string` | Finds the id of the first Replicator on a Lot. | None |
 | `FindLotReplicatorByIdentifier(string, string)` | `string` | Find the id of the first Replicator on a Lot that has a specific identifier. | None |
-| `FindPlayerOwnedLots(string, string|nil)` | `Array&lt;string&gt;` | Returns all the ids for Lots that are owned by a Player, with an optional Lot type filter. | None |
+| `FindPlayerOwnedLots(string, string|nil)` | `Array<string>` | Returns all the ids for Lots that are owned by a Player, with an optional Lot type filter. | None |
 | `GetLotReplicatorIdentifier(string, string)` | `string` | Get the identifier of a Replicator on a Lot. | None |
 | `GetLotReplicators()` | `table` | Returns all registered Player Lot Replicators. | None |
 | `GetLotRoot(string)` | `CoreObject` | Returns the root object of a Lot. | None |
 | `GetLotState(string)` | `LotState` | Returns the state for a Lot. | None |
-| `GetLots(string|nil)` | `Array&lt;string&gt;` | Returns a list of all Lot ids with an optional filter on Lot Type. | None |
+| `GetLots(string|nil)` | `Array<string>` | Returns a list of all Lot ids with an optional filter on Lot Type. | None |
 | `GetOrAssignLot(string, string|nil, boolean)` | `None` | Returns an assigned Lot or assigns the Player as the owner on an available Lot. | None |
 | `GetOwner(string)` | `Player`,  | Returns the owner of a Player Lot. | None |
 | `IsOwnerOnly()` | `None` | None | None |

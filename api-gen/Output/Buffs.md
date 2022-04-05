@@ -45,15 +45,15 @@ Producers also introduce a new system called Placeables. Placeables are objects 
 | `ClearTargetRecieveBuffs()` | `None` | None | None |
 | `FindBuffId(number)` | `string` | Given a unique storage number, find the buffId. | None |
 | `FindTargetByAncestors(CoreObject)` | `string, nil` | Finds a buff target by looking through the ancestors of a core object. | None |
-| `GetAllTargets()` | `Array&lt;string&gt;` | Get all the buff targets currently registered. | None |
+| `GetAllTargets()` | `Array<string>` | Get all the buff targets currently registered. | None |
 | `GetBuffDuration(any, any)` | `any` | Returns the duration of a buff. Will return 0 if the buff is permanent. Buffs can be stacked, so this is the duration of a single buff. | None |
 | `GetBuffRemainingAmount(string, string, any)` | `number` | Find the remaining value (between 1 and 0, or 2 and 0 if theirs stacks etc). | None |
 | `GetBuffRemainingTime(string, string, any)` | `number` | For a timed buff, how much remaining time (seconds) there is. | None |
 | `GetBuffSetting(string, string)` | `any` | Finds a buff setting from the database. | None |
-| `GetBuffs(string)` | `Array&lt;string&gt;` | Get all the current buffs on a target. | None |
+| `GetBuffs(string)` | `Array<string>` | Get all the current buffs on a target. | None |
 | `GetTargetEvents()` | `None` | None | None |
 | `GetTargetPosition(string)` | `Vector3` | Every buff target has a position in the world, this function finds that position. | None |
-| `GetTargetsWithBuff(string)` | `Array&lt;string&gt;` | Get all the targets that have a certain buff on them. | None |
+| `GetTargetsWithBuff(string)` | `Array<string>` | Get all the targets that have a certain buff on them. | None |
 | `HandleFinishedTimedBuffs(string, number)` | `None` | Updates the buffs by removing any buffs that have expired. | None |
 | `HasBuff(string, string)` | `boolean` | Check if a target has a buff on them. | None |
 | `IsBuffLinked(string, string)` | `boolean` | If this returns true, it means the buff is 'linked' and wont time out. | None |

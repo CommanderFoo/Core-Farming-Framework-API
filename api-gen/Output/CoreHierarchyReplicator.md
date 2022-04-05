@@ -30,11 +30,11 @@ title: Core Hierarchy Replicator
 | `GetCurrentInstance()` | `None` | If called during the spawning of an instance, will return the instance, else nil. | None |
 | `GetInitialBufferString(string)` | `string @Non human readable bit string` | Gives you a string of all the instances in the buffer after initialization. Server only. | None |
 | `GetInstance(CoreObject)` | `instance` | Finds the instance associated with this core object. | None |
-| `GetInstances(string)` | `Array&lt;instance&gt;` | Returns an array of all the instances for this replicator. | None |
+| `GetInstances(string)` | `Array<instance>` | Returns an array of all the instances for this replicator. | None |
 | `GetNetworkedCoreObject(instance)` | `CoreObject` | Finds the networked spawned core object for an instance. | None |
 | `GetPlayerPrivateNetworkKey(string)` | `string` | Gets the private network key used for a replicator. | None |
 | `GetReplicatorSpawnParent(string)` | `CoreObject` | Returns the core object that instances are spawned in. | None |
-| `GetReplicators()` | `Array&lt;string&gt;` | Gets a table of all the replicators currently registered. | None |
+| `GetReplicators()` | `Array<string>` | Gets a table of all the replicators currently registered. | None |
 | `GetServerCoreObject(instance)` | `CoreObject` | Finds the server spawned core object for an instance. | None |
 | `GetStaticCoreObject(instance)` | `CoreObject` | Finds the spawned static core object for an instance. | None |
 | `GetUserFunctions(string)` | `table` | Returns the User Functions for a Replicator. | None |

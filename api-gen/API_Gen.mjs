@@ -242,7 +242,7 @@ class API_Gen {
 				entry.returns.forEach((value, i) => {
 					if(value != "nil"){
 						if(value.match(/\[\]$/)){
-							output += "`Array&lt;" + value.split("[")[0] + "&gt;`";
+							output += "`Array<" + value.split("[")[0] + ">`";
 						} else {
 							output += "`" + value + "`";
 						}
