@@ -241,6 +241,55 @@ class API_Gen {
 		});
 	}
 
+	static build_index(){
+		let output = `
+---
+id: farming-framework-api
+name: Farming Framework API
+title: Farming Framework API
+hide:
+    - toc
+---
+
+<style>
+
+.md-nav--primary .md-nav__link[for=__toc] ~ .md-nav {
+
+    display: none;
+
+}
+
+</style>
+
+# Farming Framework API
+
+## Overview
+
+The Farming Framework brings the power of the Producers, Buffs, and Areas to make it possible to build experiences with crops, crafting, and shops, as well as personal areas for players that can be upgraded, decorated, and expanded. It takes advantage of the Data Tables feature and even includes a system to migrate misspelled or redundant storage to a new id without losing player data!
+
+## Namespaces
+
+|   |   |   |   |
+|:-:|:-:|:-:|:-:|
+`;
+
+		let lines = this.namespaces.split("\n")
+		
+		lines.forEach((namespace, index) => {
+			if(namespace.length > 1){
+				if(index > 1 && index % 4 == 0){
+					output += "|\n";
+				}
+
+				let ns = namespace.split("- ")[1].split(":")[0];
+				
+				output += "| [" + ns + "](../farming-framework-api/" + ns.toLowerCase() + ".md) ";
+			}
+		});
+
+		writeFileSync("./Output/index.md", output + "|\n", { flag: "w+" });
+	}
+
 	static async build(cwd){
 		this.cleanup();
 
@@ -266,6 +315,7 @@ class API_Gen {
 		//await API_Gen.build_doc(cwd, "APIActiveCoreObjects.lua", readme_map)
 
 		writeFileSync("./namespace_list.txt", this.namespaces, { flag: "w+" });
+		this.build_index()
 	}
 
 	static get_examples(content){
@@ -425,10 +475,10 @@ class API_Gen {
 		}
 
 		if(output.length > 0){
-			this.namespaces += "- " + key + ": farming-framework-api/" + key + ".md\n";
+			this.namespaces += "- " + key + ": farming-framework-api/" + key.toLowerCase() + ".md\n";
 		}
 
-		writeFileSync("./Output/" + key + ".md", output, { flag: "w+" });
+		writeFileSync("./Output/" + key.toLowerCase() + ".md", output, { flag: "w+" });
 	}
 
 }
