@@ -131,7 +131,7 @@ function API.IsProducerBaseRegistered(producerBaseId)
     return producerBases[producerBaseId] ~= nil
 end
 
----Finds a producer base
+---Finds a producer base.
 ---@param target CoreObject
 ---@return any
 function API.FindProducerBaseIdByAncestors(target)
@@ -189,7 +189,7 @@ function API.PlaceProducer(producerBaseId, producerId)
     end
 end
 
----Removes a producer from a prooducer base.
+---Removes a producer from a producer base.
 ---@param producerBaseId string
 function API.RemoveProducer(producerBaseId)
     local producerBase = producerBases[producerBaseId]
@@ -284,7 +284,7 @@ function API.HandleProducerDrops(player, producerBaseId, collectDrops)
     end
 end
 
----Tells a Producer to start building regardless of if it can
+---Tells a Producer to start building regardless of if it can.
 ---@param producerBaseId string
 function API.StartBuildingProducer(producerBaseId)
     local producerBase = producerBases[producerBaseId]
@@ -320,7 +320,7 @@ function API.GetProducerIdByStorageId(uniqueStorageId)
     end
 end
 
----Returns a number based on a producerId
+---Returns a number based on a producerId.
 ---@param producerId string
 ---@return integer
 function API.GetProducerStorageIdByProducerId(producerId)
@@ -330,7 +330,6 @@ function API.GetProducerStorageIdByProducerId(producerId)
     end
 end
 
----comment
 ---@param placeableId string
 ---@return PlaceableData
 function API.GetPlaceableData(placeableId)
@@ -484,7 +483,7 @@ function OnRemoveProducer(targetId, player)
     end
 end
 
----Populates a table with Drop Modifier Datas
+---Populates a table with Drop Modifier Datas.
 ---@param dropModifierIdsString string
 ---@param result table
 function GetDropModifiers(dropModifierIdsString, result)
@@ -574,7 +573,7 @@ function GetBuffDatas(buffIdString, inputBuffs, outputBuffs)
     end
 end
 
----Returns a table of Drop Datas or nil
+---Returns a table of Drop Datas or nil.
 ---@param dropIdString string
 ---@return table|nil
 function GetDropDatas(dropIdString)

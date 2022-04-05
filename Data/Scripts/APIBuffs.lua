@@ -105,7 +105,7 @@ API.Settings = {
     Permanent = "Permanent",
 }
 
----Registers a target to the buff system so it can recieve buffs
+---Registers a target to the buff system so it can receive buffs.
 ---@param targetId string
 ---@param functionTable BuffTargetFunctionTable
 function API.RegisterTarget(targetId, functionTable)
@@ -138,7 +138,7 @@ function API.RemoveTargetRecieveBuff(targetId, buffId)
     end
 end
 
----Removes a target from the buff system
+---Removes a target from the buff system.
 ---@param targetId string
 function API.UnregisterTarget(targetId)
     buffTargets[targetId] = nil
@@ -158,7 +158,7 @@ function API.GetTargetEvents(targetId)
         buffRelinkedEvent = buffTargetRuntime.buffRelinkedEvent,
     }
 end
----Finds a buff target by looking through the ancestors of a core object
+---Finds a buff target by looking through the ancestors of a core object.
 ---@param target CoreObject
 ---@return string, nil
 function API.FindTargetByAncestors(target)
@@ -171,7 +171,7 @@ function API.FindTargetByAncestors(target)
     return nil
 end
 
----Check if a targetId is a buff target
+---Check if a targetId is a buff target.
 ---@param targetId string
 ---@return boolean
 function API.IsBuffTarget(targetId)
@@ -181,7 +181,7 @@ function API.IsBuffTarget(targetId)
     return false
 end
 
----Finds a buff setting from the database
+---Finds a buff setting from the database.
 ---@param buffId string
 ---@param setting string Use BUFFS.Settings.Duration for example
 ---@return any
@@ -192,7 +192,7 @@ function API.GetBuffSetting(buffId, setting)
     end
 end
 
---- Check if a buffId is in the database
+--- Check if a buffId is in the database.
 ---@param buffId any
 ---@return boolean
 function API.IsValidBuff(buffId)
@@ -203,7 +203,7 @@ function API.RequestLinkedBuffsUpdate()
     linkedBuffsDirty = true
 end
 
----Forces all the linked buffs to be relinked. Expensive to call
+---Forces all the linked buffs to be relinked. Expensive to call.
 function API.UpdateLinkedBuffs(forceUpdate)
     if linkedBuffsDirty or forceUpdate then
         linkedBuffsDirty = false
@@ -259,7 +259,7 @@ function API.UpdateLinkedBuffs(forceUpdate)
     isLinking = false
 end
 
----Adds a buff
+---Adds a buff.
 ---@param targetId string the id of the target. Usually coreObject.id
 ---@param buffId string
 ---@param getTime fun():number (optional) function for getting the time
@@ -349,7 +349,7 @@ function API.AddBuff(targetId, buffId, getTime, currentTime, params)
     end
 end
 
----Sets the rate of a timed buff. by default its -1
+---Sets the rate of a timed buff. by default its -1.
 ---@param targetId any
 ---@param buffId any
 ---@param rate number
@@ -365,7 +365,7 @@ function API.SetBuffRate(targetId, buffId, rate, currentTime)
     end
 end
 
----Changes the duration of a buff. Note that the duration isnt networked so if you change it on the server you will want to change it on the client too
+---Changes the duration of a buff. Note that the duration isn't networked so if you change it on the server you will want to change it on the client too.
 ---@param targetId any
 ---@param buffId any
 ---@param duration any
@@ -379,7 +379,7 @@ function API.SetBuffDuration(targetId, buffId, duration, currentTime)
     end
 end
 
----Adds a buff to targets in a radius from the source target Id
+---Adds a buff to targets in a radius from the source target Id.
 ---@param sourceTargetId string
 ---@param radius number
 ---@param buffId string
@@ -414,7 +414,7 @@ function API.AddBuffsInRadius(sourceTargetId, position, radius, buffId, getTime,
     end
 end
 
----Updates the buffs by removing any buffs that have expired
+---Updates the buffs by removing any buffs that have expired.
 ---@param targetId string
 ---@param currentTime number
 function API.HandleFinishedTimedBuffs(targetId, currentTime)
@@ -435,7 +435,7 @@ function API.HandleFinishedTimedBuffs(targetId, currentTime)
     end
 end
 
----Remove a buff
+---Remove a buff.
 ---@param targetId string
 ---@param buffId string
 function API.RemoveBuff(targetId, buffId)
@@ -455,7 +455,7 @@ function API.SetBuffTimeFunction(targetId, buffId, getTime)
     buff.amount:SetTimeFunction(getTime)
 end
 
----Get all the buff targets currently registered
+---Get all the buff targets currently registered.
 ---@return string[]
 function API.GetAllTargets()
     local result = {}
@@ -465,7 +465,7 @@ function API.GetAllTargets()
     return result
 end
 
----Writes all the current buffs on a target to a table
+---Writes all the current buffs on a target to a table.
 ---@param targetId string
 ---@param currentTime number
 ---@return table
@@ -484,7 +484,7 @@ function API.WriteBuffsToTable(targetId, currentTime)
     return data
 end
 
----Reads all the current buffs from a table to a target
+---Reads all the current buffs from a table to a target.
 ---@param targetId string
 ---@param buffs table
 ---@param getTime any
@@ -519,7 +519,7 @@ function API.ReadBuffsFromTable(targetId, buffs, getTime, currentTime)
     end
 end
 
----If this returns true, it means the buff is 'linked' and wont time out
+---If this returns true, it means the buff is 'linked' and wont time out.
 ---@param targetId string
 ---@param buffId string
 ---@return boolean
@@ -530,7 +530,7 @@ function API.IsBuffLinked(targetId, buffId)
     end
 end
 
----Determines if a buff is permanent and therefore wont have a duration
+---Determines if a buff is permanent and therefore wont have a duration.
 ---@param targetId string
 ---@param buffId string
 ---@return boolean
@@ -541,8 +541,8 @@ function API.IsBuffPermanent(targetId, buffId)
     end
 end
 
----Returns the duration of a buff. Will return 0 if the buff is permanent. 
---- Buffs can be stacked, so this is the duration of a single buff
+---Returns the duration of a buff. Will return 0 if the buff is permanent.
+---Buffs can be stacked, so this is the duration of a single buff.
 ---@param targetId any
 ---@param buffId any
 ---@return any
@@ -553,7 +553,7 @@ function API.GetBuffDuration(targetId, buffId)
     end
 end
 
----Get all the current buffs on a target
+---Get all the current buffs on a target.
 ---@param targetId string
 ---@return string[]
 function API.GetBuffs(targetId)
@@ -567,7 +567,7 @@ function API.GetBuffs(targetId)
     return result
 end
 
----Get all the targets that have a certain buff on them
+---Get all the targets that have a certain buff on them.
 ---@param buffId string
 ---@return string[]
 function API.GetTargetsWithBuff(buffId)
@@ -581,7 +581,7 @@ function API.GetTargetsWithBuff(buffId)
     return result
 end
 
----Check if a target has a buff on them
+---Check if a target has a buff on them.
 ---@param targetId string
 ---@param buffId string
 ---@return boolean
@@ -593,7 +593,7 @@ function API.HasBuff(targetId, buffId)
     return false
 end
 
----Find the remaining value (between 1 and 0, or 2 and 0 if theirs stacks etc)
+---Find the remaining value (between 1 and 0, or 2 and 0 if theirs stacks etc).
 ---@param targetId string
 ---@param buffId string
 ---@param currentTime any
@@ -605,7 +605,7 @@ function API.GetBuffRemainingAmount(targetId, buffId, currentTime)
     end
 end
 
----For a timed buff, how much remaining time (seconds) there is
+---For a timed buff, how much remaining time (seconds) there is.
 ---@param targetId string
 ---@param buffId string
 ---@param currentTime any
@@ -617,7 +617,7 @@ function API.GetBuffRemainingTime(targetId, buffId, currentTime)
     end
 end
 
----Given a unqiue storage number, find the buffId
+---Given a unique storage number, find the buffId.
 ---@param uniqueStorageNumber number
 ---@return string
 function API.FindBuffId(uniqueStorageNumber)
@@ -630,7 +630,7 @@ function API.FindBuffId(uniqueStorageNumber)
     end
 end
 
----Every buff target has a position in the world, this function finds that position
+---Every buff target has a position in the world, this function finds that position.
 ---@param targetId string
 ---@return Vector3
 function API.GetTargetPosition(targetId)

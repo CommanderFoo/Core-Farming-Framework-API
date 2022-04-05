@@ -7,7 +7,7 @@ Assets {
       RootId: 7977345677785360299
       Objects {
         Id: 7977345677785360299
-        Name: "Seed Watermelon - Equipment"
+        Name: "Source Item - Watermelon Seed (Equipment)"
         Transform {
           Scale {
             X: 1
@@ -52,12 +52,12 @@ Assets {
         Name: "World Text"
         Transform {
           Location {
-            X: -8.67953491
-            Y: 4.88230896
+            X: -0.24017334
+            Y: -0.218994141
             Z: -12.3330269
           }
           Rotation {
-            Pitch: -6.82074261
+            Pitch: -6.82073975
             Yaw: 58.8496323
             Roll: 6.44894385e-07
           }
@@ -81,7 +81,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Text {
-          Text: "Watermellon"
+          Text: "Watermelon"
           FontAsset {
           }
           Color {
@@ -93,7 +93,7 @@ Assets {
           HorizontalSize: 1
           VerticalSize: 1
           HorizontalAlignment {
-            Value: "mc:ecoretexthorizontalalign:left"
+            Value: "mc:ecoretexthorizontalalign:center"
           }
           VerticalAlignment {
             Value: "mc:ecoretextverticalalign:center"
@@ -213,9 +213,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -284,9 +281,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -359,9 +353,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -437,9 +428,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -512,9 +500,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -590,9 +575,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -667,9 +649,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -742,9 +721,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -820,9 +796,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -896,9 +869,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -974,9 +944,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -1041,7 +1008,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Art and Collision - Farm"
   VirtualFolderPath: "Items - Crops & Seeds"
 }

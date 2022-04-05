@@ -7,7 +7,7 @@ Assets {
       RootId: 10665155237482947829
       Objects {
         Id: 10665155237482947829
-        Name: "Seed Watermelon - Icon"
+        Name: "Source Item - Watermelon Seed (Icon)"
         Transform {
           Scale {
             X: 1
@@ -90,9 +90,8 @@ Assets {
         Name: "World Text"
         Transform {
           Location {
-            X: 16.319519
-            Y: -0.815032959
-            Z: -8.77119446
+            Y: -0.81505537
+            Z: -8.7711935
           }
           Rotation {
             Yaw: -89.9999847
@@ -117,7 +116,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Text {
-          Text: "Watermellon"
+          Text: "Watermelon"
           FontAsset {
           }
           Color {
@@ -129,7 +128,7 @@ Assets {
           HorizontalSize: 1
           VerticalSize: 1
           HorizontalAlignment {
-            Value: "mc:ecoretexthorizontalalign:left"
+            Value: "mc:ecoretexthorizontalalign:center"
           }
           VerticalAlignment {
             Value: "mc:ecoretextverticalalign:center"
@@ -247,9 +246,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -319,9 +315,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -393,9 +386,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -471,9 +461,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -547,9 +534,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -625,9 +609,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -700,9 +681,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -778,9 +756,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -855,9 +830,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -930,9 +902,6 @@ Assets {
             }
             BoundsScale: 1
           }
-        }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -1007,9 +976,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -1074,7 +1040,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Art and Collision - Farm"
   VirtualFolderPath: "Items - Crops & Seeds"
 }

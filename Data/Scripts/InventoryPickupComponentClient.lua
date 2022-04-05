@@ -137,12 +137,23 @@ function SpawnItem()
     end
 
     if data.DropTemplate then
-        World.SpawnAsset(data.DropTemplate, { parent = ITEM })
+        local drop = World.SpawnAsset(data.DropTemplate, { parent = ITEM })
+        DisableCameraCollision(drop)
     else
         warn(string.format("No DropTemplate data for pickup in script: %s (id: %s)", script.name, script.id))
     end
 
     ITEM:MoveTo(finalPosition, 0, false)
+end
+
+function DisableCameraCollision(coreObject)
+    if coreObject:IsA("StaticMesh") then
+        coreObject.cameraCollision = Collision.FORCE_OFF
+    end
+
+    for _, child in ipairs(coreObject:GetChildren()) do
+        DisableCameraCollision(child)
+    end
 end
 
 function Pickup()

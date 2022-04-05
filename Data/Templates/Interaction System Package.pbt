@@ -364,6 +364,6 @@ Assets {
   Marketplace {
     Description: "=== INTERACTION SYSTEM ===\r\nThe Modular Interaction System provides creators with a way to quickly create interactive objects without\r\nany code. It is made up of a group of \"Interaction Modules\" and a set of \"Interaction Components\" that work together to manage Player interaction and provide interactivity.\r\n\r\n=== PACKAGE INCLUDES ===\r\n> APIs and modules\r\n> Script components\r\n> Example templates\r\n> Documentations\r\n\r\n=== SETUP ===\r\n> Simply drag and drop this object to the scene to get the package set up in your Project Content.\r\n> See examples and documentation for more information."
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Interaction System"
 }

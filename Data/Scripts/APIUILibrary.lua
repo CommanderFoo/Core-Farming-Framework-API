@@ -118,7 +118,7 @@ end
 ---@param control2 UIControl
 ---@return boolean
 function API.IsAboveUIControl(control1, control2)
-    if control1 == nil or control2 == nil then return false end
+    if not Object.IsValid(control1) or not Object.IsValid(control2) then return false end
 
     -- Handle same parent
     if control1.parent == control2.parent then

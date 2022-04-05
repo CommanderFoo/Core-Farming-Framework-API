@@ -2,7 +2,7 @@
 "Wood Small","gatherable drop","Wood","","","1","3","0","100.0"
 "Wood Single","gatherable drop, store purchase","Wood","","","1","1","0","100.0"
 "Plant Debris Small","gatherable drop","Plant Debris","","","1","3","0","100.0"
-"Plant Debris Single","gatherable drop","Plant Debris","","","1","1","0","100.0"
+"Plant Debris Single","gatherable drop","Plant Debris","","","1","1","0","50.0"
 "Stone Large","gatherable drop","Stone","","","3","5","0","100.0"
 "Stone Small","gatherable drop","Stone","","","1","3","0","100.0"
 "Stone Single","gatherable drop, store purchase","Stone","","","1","1","0","100.0"

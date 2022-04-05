@@ -78,7 +78,7 @@ API.Events = {
 
 ---@class InventorySetting
 API.Setting = {
-    Name = "Name",
+    Name = "InventoryName",
     DefaultIcon = "DefaultIcon",
     StorageKey = "StorageKey",
     TotalSlots = "TotalSlots",

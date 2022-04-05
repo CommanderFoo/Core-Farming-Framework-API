@@ -2,7 +2,7 @@ Assets {
   Id: 7922341369453157743
   Name: "Custom Craft Food Watermellon"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 165554987382586174
     ParameterOverrides {

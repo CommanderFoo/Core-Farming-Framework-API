@@ -2,7 +2,7 @@ Assets {
   Id: 3656226732931215292
   Name: "Farming Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 110
+  SerializationVersion: 108
   BindingSetAsset {
     Bindings {
       BindingType {

@@ -29,6 +29,8 @@ local AREAS = require(script:GetCustomProperty("APIAreas"))
 local GATHERABLES = require(script:GetCustomProperty("APIGatherables"))
 ---@type APICrafting
 local CRAFTING = require(script:GetCustomProperty("APICrafting"))
+---@type APITags
+local TAGS = require(script:GetCustomProperty("APITags"))
 
 ---@class APIReactiveComponent
 local API = {}
@@ -39,7 +41,8 @@ API.BehaviorType = {
     ToggleEffects = 2,
     ToggleEnabled = 3,
     ToggleVisibility = 4,
-    SpawnObject = 5
+    SpawnObject = 5,
+    ChangeMaterial = 6
 }
 
 ---------------------------
@@ -143,11 +146,12 @@ end
 local ProducerComponent = setmetatable({}, {__index = ComponentBase})
 ProducerComponent.__index = ProducerComponent
 
-function ProducerComponent.New(target, producerBaseId, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams)
+function ProducerComponent.New(target, producerBaseId, changeOnEmpty, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams)
     ---@class ProducerComponent
     local self = setmetatable(ComponentBase.New(target, updateOverTime, behaviorType, behaviorParams), ProducerComponent)
 
     self.ProducerBaseId = producerBaseId
+    self.ChangeOnEmpty = changeOnEmpty
     self.ChangeOnPlaced = changeOnPlaced
     self.ChangeOnBuild = changeOnBuild
     self.ChangeOnReady = changeOnReady
@@ -165,6 +169,8 @@ function ProducerComponent.New(target, producerBaseId, changeOnPlaced, changeOnB
             self.Behavior:Apply(self.ChangeOnBuild)
         elseif producerBaseState.producerId then
             self.Behavior:Apply(self.ChangeOnPlaced)
+        elseif not producerBaseState.producerId then
+            self.Behavior:Apply(self.ChangeOnEmpty)
         else
             self.Behavior:Apply(false)
         end
@@ -191,6 +197,10 @@ function ProducerComponent.New(target, producerBaseId, changeOnPlaced, changeOnB
     function OnProducerCollected(objectId, placeableId, producerId)
         if objectId == self.ProducerBaseId then
             self.Behavior:Apply(self.ChangeOnCollected)
+            local state = PRODUCERS.GetProducerBaseState(self.ProducerBaseId)
+            if not state.producerId then
+                self.Behavior:Apply(self.ChangeOnEmpty)
+            end
         end
     end
 
@@ -203,10 +213,11 @@ function ProducerComponent.New(target, producerBaseId, changeOnPlaced, changeOnB
     function OnProducerRemoved(objectId, placeableId, producerId)
         if objectId == self.ProducerBaseId then
             self.Behavior:Apply(self.ChangeOnRemoved)
+            self.Behavior:Apply(self.ChangeOnEmpty)
         end
     end
 
-    self.Listeners =  {
+    self.Listeners = {
         Events.Connect(PRODUCERS.Events.ProducerPlaced, OnProducerPlaced),
         Events.Connect(PRODUCERS.Events.ProducerStartedBuilding, OnProducerBuild),
         Events.Connect(PRODUCERS.Events.ProducerReadyForCollect, OnProducerReady),
@@ -250,9 +261,9 @@ function AreaComponent.New(target, areaIds, changeOnEnter, changeOnExit, localOn
 
     function OnPlayerAreaChanged(player, newAreaId, lastAreaId)
         if not self.LocalOnly or player == Game.GetLocalPlayer() then
-            if self.IsValidArea(newAreaId) then
+            if self:IsValidArea(newAreaId) then
                 self.Behavior:Apply(self.ChangeOnEnter)
-            elseif self.IsValidArea(lastAreaId) then
+            elseif self:IsValidArea(lastAreaId) then
                 self.Behavior:Apply(self.ChangeOnExit)
             else
                 self.Behavior:Apply(false)
@@ -281,20 +292,36 @@ end
 local CraftingStationComponent = setmetatable({}, {__index = ComponentBase})
 CraftingStationComponent.__index = CraftingStationComponent
 
-function CraftingStationComponent.New(target, craftingStationId, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams)
+function CraftingStationComponent.New(target, craftingStationId, recipes, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams)
     ---@class CraftingStationComponent
     local self = setmetatable(ComponentBase.New(target, updateOverTime, behaviorType, behaviorParams), CraftingStationComponent)
 
     self.CraftingStationId = craftingStationId
+    self.Recipes = recipes
     self.ChangeOnCraft = changeOnCraft
     self.ChangeOnReady = changeOnReady
     self.ChangeOnCollected = changeOnCollected
 
+    function DoesMatchRecipes(recipes, recipeId)
+        -- Blank string always matches
+        if not recipes or recipes == "" or not recipeId or recipeId == "" then return true end
+
+        -- Exact recipeId matches
+        if TAGS.AnyMatch(recipes, recipeId) then return true end
+
+        -- Recipe tags match
+        local recipeData = CRAFTING.GetRecipeData(recipeId)
+        if recipeData then
+            return TAGS.AnyMatch(recipes, recipeData.Tags)
+        end
+        return false
+    end
+
     local craftingStationState = CRAFTING.GetCraftingStationState(self.CraftingStationId)
     if craftingStationState then
-        if craftingStationState.isReadyForCollect then
+        if craftingStationState.isReadyForCollect and DoesMatchRecipes(self.Recipes, craftingStationState.recipeId) then
             self.Behavior:Apply(self.ChangeOnReady)
-        elseif craftingStationState.hasStartedCrafting and not self.UpdateOverTime then
+        elseif craftingStationState.hasStartedCrafting and not self.UpdateOverTime and DoesMatchRecipes(self.Recipes, craftingStationState.recipeId) then
             self.Behavior:Apply(self.ChangeOnCraft)
         else
             self.Behavior:Apply(false)
@@ -302,19 +329,19 @@ function CraftingStationComponent.New(target, craftingStationId, changeOnCraft, 
     end
 
     function OnCraftingStarted(craftingStationId, recipeId, amount)
-        if craftingStationId == self.CraftingStationId and not self.UpdateOverTime then
+        if craftingStationId == self.CraftingStationId and not self.UpdateOverTime and DoesMatchRecipes(self.Recipes, recipeId) then
             self.Behavior:Apply(self.ChangeOnCraft)
         end
     end
 
     function OnCraftingReady(craftingStationId, recipeId, amount)
-        if craftingStationId == self.CraftingStationId then
+        if craftingStationId == self.CraftingStationId and DoesMatchRecipes(self.Recipes, recipeId) then
             self.Behavior:Apply(self.ChangeOnReady)
         end
     end
 
     function OnCraftingCollected(craftingStationId, recipeId, amount)
-        if craftingStationId == self.CraftingStationId then
+        if craftingStationId == self.CraftingStationId and DoesMatchRecipes(self.Recipes, recipeId) then
             self.Behavior:Apply(self.ChangeOnCollected)
         end
     end
@@ -591,12 +618,63 @@ function SpawnObjectBehavior:ApplyBehavior(isActive)
     end
 end
 
+--- Material Change Behavior ---
+
+local MaterialChangeBehavior = setmetatable({}, {__index = BehaviorBase})
+MaterialChangeBehavior.__index = MaterialChangeBehavior
+
+function MaterialChangeBehavior.New(target, behaviorParams)
+    ---@class MaterialChangeBehavior
+    local self = setmetatable(BehaviorBase.New(target, behaviorParams), MaterialChangeBehavior)
+
+    self.Objects = {}
+    self:CacheObjects(target)
+
+	return self
+end
+
+function MaterialChangeBehavior:Destroy()
+    self.Target = nil
+    self.Params = nil
+    self.Objects = nil
+end
+
+function MaterialChangeBehavior:CacheObjects(coreObject)
+    if coreObject:IsA("StaticMesh") or coreObject:IsA("AnimatedMesh") then
+        table.insert(self.Objects, coreObject)
+    end
+    if self.Params.IncludeDescendants then
+        for _, child in ipairs(coreObject:GetChildren()) do
+            self:CacheObjects(child)
+        end
+    end
+end
+
+function MaterialChangeBehavior:ApplyBehavior(isActive)
+    if isActive then
+        self:ChangeMaterial(self.Params.ActiveMaterial, self.Params.ActiveColor)
+    else
+        self:ChangeMaterial(self.Params.InactiveMaterial, self.Params.InactiveColor)
+    end
+end
+
+function MaterialChangeBehavior:ChangeMaterial(material, color)
+    for _, object in ipairs(self.Objects) do
+        for _, slot in ipairs(object:GetMaterialSlots()) do
+            object:SetMaterialForSlot(material, slot.slotName)
+            slot:SetColor(color)
+        end
+    end
+end
+
 ---------------------------
 ---    API Functions    ---
 ---------------------------
 
 function API.NewBuffComponent(caller, target, buffId, updateOverTime, behaviorType, behaviorParams, clientOnly)
     Task.Spawn(function()
+        if not Object.IsValid(caller) then return end
+
         if not ValidateEnvironment(caller, clientOnly) then
             return
         end
@@ -632,8 +710,10 @@ function API.NewBuffComponent(caller, target, buffId, updateOverTime, behaviorTy
     end)
 end
 
-function API.NewProducerComponent(caller, target, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams, clientOnly)
+function API.NewProducerComponent(caller, target, changeOnEmpty, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams, clientOnly)
     Task.Spawn(function()
+        if not Object.IsValid(caller) then return end
+
         if not ValidateEnvironment(caller, clientOnly) then
             return
         end
@@ -644,12 +724,14 @@ function API.NewProducerComponent(caller, target, changeOnPlaced, changeOnBuild,
             return
         end
 
-        ProducerComponent.New(target, producerBaseId, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams)
+        ProducerComponent.New(target, producerBaseId, changeOnEmpty, changeOnPlaced, changeOnBuild, changeOnReady, changeOnCollected, changeOnExpired, changeOnRemoved, updateOverTime, behaviorType, behaviorParams)
     end)
 end
 
 function API.NewAreaComponent(caller, target, area, areaGroupKey, changeOnEnter, changeOnExit, localOnly, behaviorType, behaviorParams, clientOnly)
     Task.Spawn(function()
+        if not Object.IsValid(caller) then return end
+
         if not ValidateEnvironment(caller, clientOnly) then
             return
         end
@@ -679,8 +761,10 @@ function API.NewAreaComponent(caller, target, area, areaGroupKey, changeOnEnter,
     end)
 end
 
-function API.NewCraftingStationComponent(caller, target, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams, clientOnly)
+function API.NewCraftingStationComponent(caller, target, recipes, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams, clientOnly)
     Task.Spawn(function()
+        if not Object.IsValid(caller) then return end
+
         if not ValidateEnvironment(caller, clientOnly) then
             return
         end
@@ -691,7 +775,7 @@ function API.NewCraftingStationComponent(caller, target, changeOnCraft, changeOn
             return
         end
 
-        CraftingStationComponent.New(target, craftingStationId, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams)
+        CraftingStationComponent.New(target, craftingStationId, recipes, changeOnCraft, changeOnReady, changeOnCollected, updateOverTime, behaviorType, behaviorParams)
     end)
 end
 
@@ -723,6 +807,8 @@ function GetBehavior(target, behaviorType, behaviorParams)
         return ToggleVisibilityBehavior.New(target, behaviorParams)
     elseif behaviorType == API.BehaviorType.SpawnObject then
         return SpawnObjectBehavior.New(target, behaviorParams)
+    elseif behaviorType == API.BehaviorType.ChangeMaterial then
+        return MaterialChangeBehavior.New(target, behaviorParams)
     end
 end
 

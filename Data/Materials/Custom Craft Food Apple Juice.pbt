@@ -2,7 +2,7 @@ Assets {
   Id: 3137075193412591934
   Name: "Custom Craft Food Apple Juice"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 3520688045900186889
     ParameterOverrides {

@@ -29,7 +29,7 @@
 
     APIPointerInteractionModule
 
-        This mnodule will react to mouse interactions in world space for the local Player.
+        This module will react to mouse interactions in world space for the local Player.
 
     APILookInteractionModule
 

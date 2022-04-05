@@ -44,7 +44,7 @@ function API.FindPlacementAreaByAncestors(coreObject)
     end
 end
 
----Gets information about the placement area
+---Gets information about the placement area.
 ---@param id string
 ---@return PlacementAreaState
 function API.GetPlacementAreaState(id)

@@ -42,6 +42,15 @@ Assets {
               SubObjectId: 3142449737241376028
             }
           }
+          Overrides {
+            Name: "cs:DisabledIconTint"
+            Color {
+              R: 0.15
+              G: 0.15
+              B: 0.15
+              A: 1
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -824,7 +833,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Crafting"
 }

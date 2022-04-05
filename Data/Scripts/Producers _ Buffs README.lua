@@ -342,7 +342,7 @@
 
             d. BuildRate
 
-                - The build rate is a mutliplier. If a Producer has a BuildDuration of 10 seconds, but the BuildRate is
+                - The build rate is a multiplier. If a Producer has a BuildDuration of 10 seconds, but the BuildRate is
                 2, then it will only take 5 seconds. Useful if you want special Producer Bases that can build Producers
                 faster or slower.
 
@@ -381,7 +381,7 @@
         2. Drop an "ProducerData" script into that "Producers" group as a child.
 
         3. Give the "ProducerData" script a unique name. This is the ID of the Item. This does not need to match the
-        Producer Base Id since you can potentially place a varierty of Producers into a single Producer Base.
+        Producer Base Id since you can potentially place a variety of Producers into a single Producer Base.
 
         4. Fill in the Producer Data Custom Properties.
 
@@ -530,7 +530,7 @@
 
             g. AutoBuild
 
-                - If true, one you place a Producer on a Producer Base, it will begin building, and doesnt require
+                - If true, one you place a Producer on a Producer Base, it will begin building, and doesn't require
                 equipment to be interacted with it. If buffs are required to start building, once the buff requirement
                 is fulfilled it will start building. Leave ticked if you never want the player to have to manually
                 activate a Producer to start building.
@@ -849,7 +849,7 @@
     ----------------------------------
 
     Both Producer Bases and Producers can receive and output Buffs. Buffs can affect a lot of different things like
-    Producer behaviour and drops. Buffs can either be applied directly to an object or they can be output in a radius
+    Producer behavior and drops. Buffs can either be applied directly to an object or they can be output in a radius
     and "linked" to other objects.
 
     There are various reasons why you might want to setup Buff data on a Producer Base vs. a Producer. For example it
@@ -930,7 +930,7 @@
 
                 - If true, this Buff will be active when a Producer has expired.
 
-        8. If this Buff is meant to be recieved, locate the PlaceableData or ProducerData you want to recieve the Buff.
+        8. If this Buff is meant to be received, locate the PlaceableData or ProducerData you want to receive the Buff.
 
         9. Add a Group or "DataGroup" script as a child of the PlaceableData or ProducerData and name it "InputBuffs".
 
@@ -941,7 +941,7 @@
 
             a. CanReceive
 
-                - Tick to be able to actually recieve this Buff.
+                - Tick to be able to actually receive this Buff.
 
             b. OverrideBuffDuration
 

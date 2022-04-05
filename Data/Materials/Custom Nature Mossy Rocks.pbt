@@ -2,7 +2,7 @@ Assets {
   Id: 3135180655224893148
   Name: "Custom Nature Mossy Rocks"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 10567468338059136635
     ParameterOverrides {

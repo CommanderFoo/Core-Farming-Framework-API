@@ -44,7 +44,7 @@ local epochTimeMinusTime = os.time() - time()
 
 local PRIVATE_NETWORKED_KEY = "epochTimeMinusServerTime"
 
----If this is false GetRealTime() will still return a correct value it just wont be server authorized
+---If this is false GetRealTime() will still return a correct value it just wont be server authorized.
 ---@return boolean
 function API.IsValid()
     if Environment.IsClient() then
@@ -54,7 +54,7 @@ function API.IsValid()
     end
 end
 
----Gives you the epoch time, accurate to the millisecond based on the last sync
+---Gives you the epoch time, accurate to the millisecond based on the last sync.
 ---@return nil
 function API.GetRealTime()
     if Environment.IsClient() then
@@ -68,7 +68,7 @@ function API.GetRealTime()
     end
 end
 
----Call this on the server to refresh the difference between epoch time and time()
+---Call this on the server to refresh the difference between epoch time and time().
 function API.SyncronizeEpoch()
     if not Environment.IsServer() then
         warn ("UpdatePlayersEpoch must be called by the server")
@@ -77,7 +77,7 @@ function API.SyncronizeEpoch()
     epochTimeMinusTime = os.time() - time()
 end
 
----Updates all the players with the current offset between epoch time and server time
+---Updates all the players with the current offset between epoch time and server time.
 function API.UpdateAllPlayersEpoch()
     if not Environment.IsServer() then
         warn ("UpdatePlayersEpoch must be called by the server")
@@ -91,7 +91,7 @@ function API.UpdateAllPlayersEpoch()
     end
 end
 
----Update a player so they know the offset between epoch time and server time
+---Update a player so they know the offset between epoch time and server time.
 ---@param player string|table
 function API.UpdatePlayerEpoch(player)
     player:SetPrivateNetworkedData("epochTimeMinusServerTime", API.CompactTime(epochTimeMinusTime))

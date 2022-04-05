@@ -2,7 +2,7 @@ Assets {
   Id: 17055950833094925986
   Name: "Custom Crop Leafy Bush Dead Still"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 8653764842698833007
     ParameterOverrides {

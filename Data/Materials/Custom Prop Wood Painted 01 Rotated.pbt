@@ -2,7 +2,7 @@ Assets {
   Id: 4648881920192703239
   Name: "Custom Prop Wood Painted 01 Rotated"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 2360206302109331130
     ParameterOverrides {

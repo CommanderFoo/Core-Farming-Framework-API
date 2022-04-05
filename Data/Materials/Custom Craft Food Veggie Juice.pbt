@@ -2,7 +2,7 @@ Assets {
   Id: 12782807017310272108
   Name: "Custom Craft Food Veggie Juice"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 3520688045900186889
     ParameterOverrides {

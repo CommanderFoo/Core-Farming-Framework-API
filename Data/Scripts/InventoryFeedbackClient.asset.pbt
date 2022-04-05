@@ -23,6 +23,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Inventory"
 }

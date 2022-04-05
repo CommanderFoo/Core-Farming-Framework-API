@@ -12,7 +12,7 @@
 
     The Stores system allows users to purchase and sell Items, Currencies & Upgrades.
 
-    You can use the Database to define Purchaseables and Sellables, then hook them into Stores.
+    You can use the Database to define Purchasables and Sellables, then hook them into Stores.
 
     There are included templates that make it easy to set up an interactive in-world shops
     and the UI needed to drive these sales.
@@ -26,7 +26,7 @@
     ---          SETUP         ---
     ------------------------------
 
-    Stores, Purchaseables & Sellables are created by adding data to the Database. Like other systems,
+    Stores, Purchasables & Sellables are created by adding data to the Database. Like other systems,
     this can be done with either Data Tables or Hierarchy objects.
 
     Example Data Tables are available for you to fill out, found in the "My Tables" section of Project Content:
@@ -80,7 +80,7 @@
 
             - An optional Shared Storage Key to save Store data into. Default is Local Storage.
 
-        4. Purchaseables
+        4. Purchasables
 
             - A comma-separated list of Purchaseable Ids & Tags that determines what appears in this Store.
 
@@ -98,7 +98,7 @@
             - By default, the 'Store Screen' template is used for all stores. If you want a particular Store
             to have a different theme for selling, you can assign a different template for it here.
 
-    Purchaseables
+    Purchasables
 
         1. Id
 
@@ -106,7 +106,7 @@
 
         2. SortOrder
 
-            - A numerical index that determines the order of Purchaseables in Stores.
+            - A numerical index that determines the order of Purchasables in Stores.
 
         3. Name
 
@@ -118,16 +118,16 @@
 
         5. Tags
 
-            - A comma-separated list of tags that make it easier to deal with groups of Purchaseables.
+            - A comma-separated list of tags that make it easier to deal with groups of Purchasables.
             Tags allow for simplification of data entry (e.g. a Store could sell anything with the 'tools' tag).
 
         6. PerkReference
 
-            - A Purchaseable can be tied to a Core Perk by assining the NetReference here.
+            - A Purchaseable can be tied to a Core Perk by assigning the NetReference here.
 
         7. GlobalPurchaseLimit
 
-            - The sale of a Purchaesable can be limited (per player) across the entire game by setting a limit here.
+            - The sale of a Purchasable can be limited (per player) across the entire game by setting a limit here.
             The default value of 0 will allow unlimited purchases.
 
         -- Icon --
@@ -184,7 +184,7 @@
 
     Sellables
 
-        Data for Sellables is almost identical to Purchaseables.
+        Data for Sellables is almost identical to Purchasables.
 
     ------------------------------
     ---       STORE ZONES      ---
@@ -194,7 +194,7 @@
     A basic template is available for this purpose: "Store Catalog Zone - Look (Database)"
     The StoreId custom property on the root of this template will link it to your Store data.
 
-    Individual Purchaseables can also be made available in the world.
+    Individual Purchasables can also be made available in the world.
     A "Purchaseable Item Zone - Look (Database)" template can be used for this purpose.
 
     These zones are supported by pre-placing them in the scene or loading them through an Area Object Loader.

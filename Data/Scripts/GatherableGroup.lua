@@ -316,7 +316,8 @@ function AddEntriesFromGroup(group)
                     end
                 end
 
-                if child == child:FindTemplateRoot() then
+                -- Try to add an existing template if there are no states as of yet
+                if child == child:FindTemplateRoot() and #entry.states.Static == 0 then
                     entry.states.Static[1] = child.sourceTemplateId
                 end
 
@@ -969,6 +970,12 @@ script.destroyEvent:Connect(
 
 LoadFromInstance()
 RefreshCoreObjects()
+
+for _, entry in ipairs(entries) do
+    if entry.state >= entry.numberOfStates then
+        AddPendingRespawn(entry)
+    end
+end
 
 if Environment.IsServer() and RANDOM_SPAWN then
     if isActive then

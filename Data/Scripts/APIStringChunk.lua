@@ -41,7 +41,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 local API = {}
 
 
--- Split a string up into smaller strings
+-- Split a string up into smaller strings.
 function API.SplitStringByChunk(text, chunkSize)
     assert(type(text) == "string")
     assert(type(chunkSize) == "number")
@@ -55,7 +55,7 @@ function API.SplitStringByChunk(text, chunkSize)
     return s
 end
 
--- Increases a char to a different bit for the sanity check
+-- Increases a char to a different bit for the sanity check.
 function AdjustToken(token)
     local byte = 1
     if token then
@@ -65,7 +65,7 @@ function AdjustToken(token)
     return string.char(byte)
 end
 
----Gets the string from NetworkedData, but only if all the strings are synced
+---Gets the string from NetworkedData, but only if all the strings are synced.
 ---@param player Player
 ---@param key string
 ---@return string|nil
@@ -104,7 +104,7 @@ end
 
 
 
----Sets a string for private networked data, splitting it up into different chucks and ensuring it will syncronize
+---Sets a string for private networked data, splitting it up into different chucks and ensuring it will synchronize.
 ---@param player Player
 ---@param key string
 ---@param value string|nil

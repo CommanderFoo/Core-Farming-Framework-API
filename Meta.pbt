@@ -1,6 +1,5 @@
-GameId: "554FDCAE45567E99652EE3BC79795FD6"
+GameId: "6580B238439E708F0CD777A3521C3022"
 DisplayName: "Farming Framework API"
-GameSerializationVersion: 110
-Framework: "Farming"
-SourceGameId: "f250977721dc45309cd5eb0525d09c83"
+GameSerializationVersion: 108
+Framework: "Empty Project"
 StorageVersion: 2

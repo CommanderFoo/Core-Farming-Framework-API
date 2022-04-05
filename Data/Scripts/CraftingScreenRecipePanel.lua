@@ -68,6 +68,7 @@ local currentPage
 local currentRecipeId
 local currentAmount = 1
 local recipeObjects = {}
+local recipeControllers = {}
 local ingredientObjects = {}
 local listeners = {}
 
@@ -154,6 +155,8 @@ function SetupItems()
             local recipeController = recipeControllerRef:WaitForObject().context
             if recipeController and recipeController.Initialize then
                 recipeController.Initialize(validRecipeIds[i], iconCameraId)
+                recipeControllers[validRecipeIds[i]] = recipeController
+                UpdateRecipeState(validRecipeIds[i])
             else
                 warn("No Controller found for Recipe UI. The \"Controller\" custom property may not be set, or the referenced controller script does not have an \"Initialize(recipeId, cameraId)\" method")
             end
@@ -169,6 +172,16 @@ function SetupItems()
         LOCAL_PLAYER.clientUserData[CRAFTING_TAG .. craftingStationId .. "CurrentPage"] = currentPage
     else
         LOCAL_PLAYER.clientUserData[CRAFTING_TAG .. "CurrentPage"] = currentPage
+    end
+end
+
+function UpdateRecipeState(recipeId)
+    local canCraftAny = CRAFTING.CanCraft(LOCAL_PLAYER, craftingStationId, recipeId, 1)
+    local recipeController = recipeControllers[recipeId]
+    if canCraftAny then
+        recipeController.SetAvailable()
+    else
+        recipeController.SetUnavailable()
     end
 end
 
@@ -232,13 +245,18 @@ function SelectRecipe()
     INTERACTION_MANAGER.Select(INTERACTION_MODULE.Module, recipeObjects[currentRecipeId], SELECTION_SET, LOCAL_PLAYER)
 
     -- Setup icon
+    local cameraId = iconCameraId
+    if recipeData.IconCameraId and recipeData.IconCameraId ~= "" then
+        cameraId = recipeData.IconCameraId
+    end
+
     OUTPUT_ICON.visibility = Visibility.INHERIT
     if recipeData.IsKitbashed2DIcon then
         OUTPUT_ICON:SetImage(nil)
         OUTPUT_ICON:SetColor(Color.New(0, 0, 0, 0))
         World.SpawnAsset(recipeData.IconAsset, { parent = OUTPUT_ICON })
     elseif recipeData.Is3DIcon then
-        ICON_MANAGER.SetIcon(OUTPUT_ICON, iconCameraId, recipeData.IconAsset, CameraCaptureResolution.MEDIUM)
+        ICON_MANAGER.SetIcon(OUTPUT_ICON, cameraId, recipeData.IconAsset, CameraCaptureResolution.MEDIUM)
     elseif recipeData.IsImageIcon then
         OUTPUT_ICON:SetImage(recipeData.IconAsset)
     else

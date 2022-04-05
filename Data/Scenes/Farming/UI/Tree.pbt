@@ -4642,53 +4642,6 @@ Objects {
   }
 }
 Objects {
-  Id: 14123099530611620575
-  Name: "Scene Changer - Farming (Remove - Example Only)"
-  Transform {
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 6792825314166502495
-  TemplateInstance {
-    ParameterOverrideMap {
-      key: 6984740202161943688
-      value {
-        Overrides {
-          Name: "Name"
-          String: "Scene Changer - Farming (Remove - Example Only)"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-      }
-    }
-    TemplateAsset {
-      Id: 18074178967173084625
-    }
-  }
-  NetworkRelevanceDistance {
-    Value: "mc:eproxyrelevance:critical"
-  }
-}
-Objects {
   Id: 3357765105661692383
   Name: "Reset Data Tool"
   Transform {
@@ -4993,9 +4946,6 @@ Objects {
     InstanceId: 1787526599709109529
     TemplateId: 2038226924033640544
   }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -5072,9 +5022,6 @@ Objects {
     InstanceId: 1787526599709109529
     TemplateId: 2038226924033640544
   }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
-  }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
   }
@@ -5135,8 +5082,6 @@ Objects {
       MaxDrawDistance: 5000
       MaxDistanceFadeRange: 1000
     }
-    ShadowBias: 0.4
-    ShadowSlopeBias: 0.6
   }
   InstanceHistory {
     SelfId: 17891626398916192856
@@ -5328,9 +5273,6 @@ Objects {
     SubobjectId: 5339406426196340218
     InstanceId: 1787526599709109529
     TemplateId: 2038226924033640544
-  }
-  Relevance {
-    Value: "mc:eproxyrelevance:critical"
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"

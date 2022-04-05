@@ -28,11 +28,12 @@ local REACTIVE_COMPONENT = require(script:GetCustomProperty("APIReactiveComponen
 local OBJECT_TO_PLAY_STOP = script:GetCustomProperty("ObjectToPlayStop"):WaitForObject()
 local DELAY_SECONDS = script:GetCustomProperty("DelaySeconds")
 local INCLUDE_DESCENDANTS = script:GetCustomProperty("IncludeDescendants")
+local RECIPES = script:GetCustomProperty("Recipes")
 local CHANGE_ON_CRAFT = script:GetCustomProperty("ChangeOnCraft")
 local CHANGE_ON_READY = script:GetCustomProperty("ChangeOnReady")
 local CHANGE_ON_COLLECTED = script:GetCustomProperty("ChangeOnCollected")
 
-local component = REACTIVE_COMPONENT.NewCraftingStationComponent(script, OBJECT_TO_PLAY_STOP, CHANGE_ON_CRAFT, CHANGE_ON_READY, CHANGE_ON_COLLECTED, false, REACTIVE_COMPONENT.BehaviorType.ToggleEffects, {
+local component = REACTIVE_COMPONENT.NewCraftingStationComponent(script, OBJECT_TO_PLAY_STOP, RECIPES, CHANGE_ON_CRAFT, CHANGE_ON_READY, CHANGE_ON_COLLECTED, false, REACTIVE_COMPONENT.BehaviorType.ToggleEffects, {
     IncludeDescendants = INCLUDE_DESCENDANTS,
     DelaySeconds = DELAY_SECONDS
 }, true)

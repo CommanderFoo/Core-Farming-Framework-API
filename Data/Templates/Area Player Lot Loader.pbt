@@ -180,7 +180,7 @@ Assets {
   Marketplace {
     Description: "Place this template inside a Player Lot hierarchy if that Player Lot is inside an Area. It will automatically load and unload the Player Lot when the Area loads and unloads."
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Areas"
 }

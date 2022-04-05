@@ -2,7 +2,7 @@ Assets {
   Id: 5453964201076389098
   Name: "Isometric Camera Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 110
+  SerializationVersion: 108
   BindingSetAsset {
     Bindings {
       BindingType {

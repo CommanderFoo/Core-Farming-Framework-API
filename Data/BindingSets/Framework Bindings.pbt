@@ -2,7 +2,7 @@ Assets {
   Id: 16213423284384879375
   Name: "Framework Bindings"
   PlatformAssetType: 29
-  SerializationVersion: 110
+  SerializationVersion: 108
   BindingSetAsset {
     Bindings {
       BindingType {

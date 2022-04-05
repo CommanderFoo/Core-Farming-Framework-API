@@ -34,8 +34,14 @@ Assets {
           Id: 537402720638999810
         }
       }
+      Overrides {
+        Name: "cs:APITags"
+        AssetReference {
+          Id: 4344569584138172734
+        }
+      }
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Reactive Components"
 }

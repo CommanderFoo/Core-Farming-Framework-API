@@ -30,7 +30,7 @@
     a collection of data under a specific category.
 
     Name the DataGroup in a way that you would like to access it. For example, you could create a group called "Items"
-    and it would then be accessable by using the below code on the server or client:
+    and it would then be accessible by using the below code on the server or client:
 
         local DATABASE = require(script:GetCustomProperty("APIDatabase"))
         print(DATABASE.Items) -- This is just an empty table
@@ -60,13 +60,13 @@
     ------------------------------
 
     To add data just create a group or script under "Database". This can act as a collection of similar
-    datas if it contains children, or it can be a data entry itself if it has Custom Properties.
+    data if it contains children, or it can be a data entry itself if it has Custom Properties.
 
     NOTE: Folders are not added as data or categories an can instead be used to organize your data.
     They will be totally ignored by the system in terms of data structure.
 
     Name it in a way that you would like to access it. For example, you could create a group called "Items" and
-    it would then be accessable by using the below code on the server or client:
+    it would then be accessible by using the below code on the server or client:
 
         local DATABASE = require(script:GetCustomProperty("APIDatabase"))
         print(DATABASE.Items) -- This is just an empty table

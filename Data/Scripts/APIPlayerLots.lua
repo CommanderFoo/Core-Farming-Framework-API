@@ -229,7 +229,7 @@ function API.FindLotByAncestors(coreObject)
     end
 end
 
----Finds all the lots that arent 'owned' by any Players, or that are owned by offline Players.
+---Finds all the lots that aren't 'owned' by any Players, or that are owned by offline Players.
 ---@param lotType string|nil
 ---@param includeOfflineOwners boolean
 ---@return string[]

@@ -2,7 +2,7 @@ Assets {
   Id: 2077577025583816224
   Name: "Custom Crop Apple"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 575699778379621985
     ParameterOverrides {

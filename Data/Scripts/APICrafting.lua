@@ -88,7 +88,7 @@ local DEFAULT_SETTINGS = {
     [API.Setting.GlobalRecipes] = ""
 }
 
----Registers a Crafting Station to the system
+---Registers a Crafting Station to the system.
 ---@param craftingStationId string
 ---@param functionTable table
 function API.RegisterCraftingStation(craftingStationId, functionTable)
@@ -101,7 +101,7 @@ function API.RegisterCraftingStation(craftingStationId, functionTable)
     end
 end
 
----When destroying a Crafting Station it is important to unregister it
+---When destroying a Crafting Station it is important to unregister it.
 ---@param craftingStationId string
 function API.UnregisterCraftingStation(craftingStationId)
     craftingStations[craftingStationId] = nil
@@ -279,7 +279,7 @@ function API.StartCrafting(player, craftingStationId, recipeId, amountToCraft)
     end
 
     -- Remove ingredients on both server and client for immediate feedback, but do not update the other context to avoid
-    -- doing it multiple times
+    -- doing it multiple times.
     local recipeData = API.GetRecipeData(recipeId)
     if recipeData.Inputs then
         for _, inputData in pairs(recipeData.Inputs) do
@@ -512,7 +512,7 @@ function API.IsPlayerUsing(player, craftingStationId)
     return false
 end
 
----Returns the global crafting state
+---Returns the global crafting state.
 ---@param playerId string
 function API.GetCraftingState(playerId)
     local globalState = craftingState[playerId][API.GLOBAL_KEY]
@@ -555,7 +555,7 @@ function API.GetCraftingState(playerId)
     end
 end
 
----Returns the state of a Crafting Station
+---Returns the state of a Crafting Station.
 ---@param craftingStationId string
 ---@return CraftingStationState
 function API.GetCraftingStationState(craftingStationId)
@@ -565,7 +565,7 @@ function API.GetCraftingStationState(craftingStationId)
     return nil
 end
 
----Returns the craft rate for a Recipe on a Crafting Station
+---Returns the craft rate for a Recipe on a Crafting Station.
 ---@param craftingStationId string
 ---@return number
 function API.GetCraftRate(craftingStationId)
@@ -662,13 +662,11 @@ function API.GetOutputText(recipeId, amount)
     end
 end
 
----Checks all pending crafting to see if a Player has a complete recipe but no station to claim it at. Also checks for
----and clears stations that no longer have an associated Player.
-function CheckDisconnectedCrafting()
+---Checks all pending crafting to see if a Player has a complete recipe but no station to claim it at.
+function CheckDisconnectedCraftingOnJoin(player)
     -- Floating state (Handles players entering the game and not having a station associated with a pending recipe)
     for playerId, stateCollection in pairs(floatingCraftingState) do
-        local player = Game.FindPlayer(playerId)
-        if player then
+        if player.id == playerId then
             for key, savedState in pairs(stateCollection) do
                 -- Manually check for completed crafts since there is no associated station
                 if savedState.recipeId and DATABASE.Recipes then
@@ -700,7 +698,11 @@ function CheckDisconnectedCrafting()
             end
         end
     end
+end
 
+---Checks all pending crafting to see if a Player has a complete recipe but no station to claim it at. Also checks for
+---and clears stations that no longer have an associated Player.
+function CheckDisconnectedCrafting()
     -- Server state (Handles stations being used by players who have logged off, or just left the station for too long
     -- without collecting from it)
     for playerId, stateCollection in pairs(craftingState) do
@@ -1033,8 +1035,8 @@ function CacheValidRecipes()
                 validRecipeLookup[craftingStationId] = allRecipeIds
             else
                 local validRecipeIds = {}
-                for recipeId, _ in pairs(TAGS.FindMatchingData("Recipes", craftingStationData.Recipes, false)) do
-                    table.insert(validRecipeIds, recipeId)
+                for _, recipeData in ipairs(TAGS.FindMatchingData("Recipes", craftingStationData.Recipes, true)) do
+                    table.insert(validRecipeIds, recipeData.__Id)
                 end
                 validRecipeLookup[craftingStationId] = validRecipeIds
             end
@@ -1065,8 +1067,8 @@ function CacheValidRecipes()
         validRecipeLookup[API.GLOBAL_KEY] = allRecipeIds
     else
         local validRecipeIds = {}
-        for recipeId, _ in pairs(TAGS.FindMatchingData("Recipes", API.GetSetting(API.Setting.GlobalRecipes), false)) do
-            table.insert(validRecipeIds, recipeId)
+        for _, recipeData in ipairs(TAGS.FindMatchingData("Recipes", API.GetSetting(API.Setting.GlobalRecipes), true)) do
+            table.insert(validRecipeIds, recipeData.__Id)
         end
         validRecipeLookup[API.GLOBAL_KEY] = validRecipeIds
     end
@@ -1141,6 +1143,10 @@ function OnPlayerJoined(player)
 
             Events.BroadcastToServer(API.Events.LoadCraftingStations)
         end
+    else
+        Task.Spawn(function()
+            CheckDisconnectedCraftingOnJoin(player)
+        end, 5)
     end
 end
 

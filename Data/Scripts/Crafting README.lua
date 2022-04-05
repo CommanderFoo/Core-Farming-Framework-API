@@ -301,7 +301,7 @@
 
     --- Placeables Data Table ---
 
-    Each Crafting Station will need a row in the Placeables Data Table. This will let Playes place a Crafting Station
+    Each Crafting Station will need a row in the Placeables Data Table. This will let Players place a Crafting Station
     into a Placeables Replicator on their Lot. This data defines how the Crafting Station looks in world, how it can be
     placed and interacted with and more.
 
@@ -312,7 +312,7 @@
 
         2. Name
 
-            - This shows up in various UI elemnts and screens.
+            - This shows up in various UI elements and screens.
 
         3. Tags
 
@@ -492,7 +492,7 @@
 
         39. BuildRate
 
-            - The build rate is a mutliplier. If a Producer has a BuildDuration of 10 seconds, but the BuildRate is 2,
+            - The build rate is a multiplier. If a Producer has a BuildDuration of 10 seconds, but the BuildRate is 2,
             then it will only take 5 seconds. Useful if you want special Producer Bases that can build Producers faster
             or slower.
 
@@ -528,7 +528,7 @@
 
         46. CraftRate
 
-            - The craft rate is a mutliplier. If a Recipe has a CraftSeconds of 10 seconds, but the CraftRate is 2,
+            - The craft rate is a multiplier. If a Recipe has a CraftSeconds of 10 seconds, but the CraftRate is 2,
             then it will only take 5 seconds. Useful if you want special Crafting Stations that can craft faster or
             slower.
 
@@ -577,7 +577,7 @@
     --- CRAFTING STATION BUFFS ---
     ------------------------------
 
-    Crafting Stations can output Buffs like a normal Placeable. They can also recieve Buffs that affect the Station. To
+    Crafting Stations can output Buffs like a normal Placeable. They can also receive Buffs that affect the Station. To
     add a Buff interaction to a Crafting Station you will need to use the following Data Tables.
 
         * Buffs
@@ -617,7 +617,7 @@
     --- Crafting Station Buffs Data Table ---
 
     Each type of Buff interaction on a Crafting Station will need a row in the Crafting Station Buffs Data Table. If you
-    want the station to be able to recieve a "Powered" Buff you would add a row for that and check "CanReceive" and fill
+    want the station to be able to receive a "Powered" Buff you would add a row for that and check "CanReceive" and fill
     out the other fields as you see fit. If the station should output a Buff you would check "CanOutput" and fill out
     the fields after that.
 
@@ -673,7 +673,7 @@
 
         12. CraftRateMultiplierPercent
 
-            - If "AffectsCraftRate" is true, this value will be multipled against the Crafting Stations CraftRate.
+            - If "AffectsCraftRate" is true, this value will be multiplied against the Crafting Stations CraftRate.
 
         13. ValidAddBuffToolTypes
 

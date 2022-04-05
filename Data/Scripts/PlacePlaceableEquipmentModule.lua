@@ -86,6 +86,7 @@ function API.New()
     local rotationOffset = Rotation.ZERO
     local equipment
     local interactionError
+    local missingPlacementPreviewErrors = {}
 
     -- Private local functions
     local Setup
@@ -490,6 +491,9 @@ function API.New()
                     end
                 end
                 return
+            elseif not missingPlacementPreviewErrors[currentPlaceableId] then
+                missingPlacementPreviewErrors[currentPlaceableId] = true
+                warn(string.format("Missing PlacementPreview for Placeable: %s", currentPlaceableId))
             end
         end
         DestroyPreview()

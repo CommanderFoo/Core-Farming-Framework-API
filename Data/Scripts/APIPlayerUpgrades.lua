@@ -345,14 +345,14 @@ function API.RemoveUpgrade(player, upgradeId)
     end
 end
 
----Upgrade is registered with the system
+---Upgrade is registered with the system.
 ---@param upgradeId string
 ---@return boolean
 function API.IsUpgradeRegistered(upgradeId)
     return upgrades[upgradeId] ~= nil
 end
 
----Upgrade is loaded for the player
+---Upgrade is loaded for the player.
 ---@param playerId string
 ---@param upgradeId string
 ---@return boolean

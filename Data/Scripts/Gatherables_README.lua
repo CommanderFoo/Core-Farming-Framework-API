@@ -81,7 +81,7 @@
     ------------------------------
 
     Each Gatherable object inside the "Gatherable Group" also has its own configuration values. This lets you customize
-    the states, drops and other behaviour per object.
+    the states, drops and other behavior per object.
 
         Gatherable Trees
         |__ Static Context
@@ -129,7 +129,7 @@
 
     --- RESPAWN CONFIG ---
 
-    These values control the respawn behaviour for this gatherable Object.
+    These values control the respawn behavior for this gatherable Object.
 
     1. RespawnSeconds
 
@@ -153,7 +153,7 @@
 
     --- DROPS CONFIG ---
 
-    These values drive the behaviours around dropping items in world or directly into a Players Inventory. You can
+    These values drive the behaviors around dropping items in world or directly into a Players Inventory. You can
     disable drops by not including any drop data in the Gatherable Object hierarchy. More on that can be found below.
     Drops only work if an Inventory has been added to the scene.
 
@@ -287,7 +287,7 @@
     State Template Method:
 
       Gatherable Trees
-          |__ Static Contex
+          |__ Static Context
               |__ Gatherables Group
                   |__ Gatherable Tree <--- State Template is set here, State1, State2, ...
 

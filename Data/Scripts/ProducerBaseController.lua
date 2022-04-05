@@ -515,6 +515,7 @@ function ProducerBaseController:NewBuffProducerInteraction()
                 if doInteract then
                     self:BuffProducerWithTool(player, toolType, equipmentSettings)
                 end
+
                 return true, nil
             else
                 canBuffError = self:GetMissingRequirementsMessage(itemId)
@@ -958,7 +959,8 @@ function ProducerBaseController:InitializeBuffData()
         removeOnProducerRemoved = {},
         addBuffEffect = {},
         addBuffEffectOffset = {},
-        minAllowedBuffConsumption = {}
+        minAllowedBuffConsumption = {},
+        showDebugBuffs = {}
     }
 end
 
@@ -969,12 +971,16 @@ function ProducerBaseController:ProcessBuffData(buffs)
     end
 
     for buffId, data in pairs(buffs) do
-        if data.Radius and data.Radius > 0 then
+        if data.CanOutput and data.Radius and data.Radius > 0 then
             self.BuffData.proximityBuffsRadius[buffId] = data.Radius
             self.BuffData.proximityBuffsAddAmount[buffId] = data.AddAmount
 
             if data.Radius then
                 self.BuffData.proximityBuffs[buffId] = true
+            end
+
+            if data.ShowDebug then
+                self.BuffData.showDebugBuffs[buffId] = true
             end
         end
         if data.CanReceive then
@@ -1665,6 +1671,8 @@ function ProducerBaseController:OnStepTime(currentTime)
 
     self:UpdateRuntimeState()
     self:HandleAutoCollect()
+
+    self:ShowBuffsDebug()
 
     BUFFS.HandleFinishedTimedBuffs(self.ComponentRoot.id)
 end

@@ -68,7 +68,7 @@ API.Events = {
     AllInstancesDestroyed = REP_TAG .. "AllInstancesDestroyed"
 }
 
----Called by the Spawners
+---Called by the Spawners.
 ---@param spawnerRoot CoreObject
 function API.RegisterSpawners(spawnerRoot)
     if Environment.IsServer() then
@@ -90,7 +90,7 @@ function API.IsReady()
     return spawners.static ~= nil
 end
 
----Gets a table of all the replicators currently registered
+---Gets a table of all the replicators currently registered.
 ---@return string[]
 function API.GetReplicators()
     local result = {}
@@ -105,7 +105,7 @@ function API.IsReplicatorId(id)
     return replicators[id] ~= nil
 end
 
----Returns the core object that instances are spawned in
+---Returns the core object that instances are spawned in.
 ---@param replicatorId string
 ---@return CoreObject
 function API.GetReplicatorSpawnParent(replicatorId)
@@ -113,14 +113,14 @@ function API.GetReplicatorSpawnParent(replicatorId)
     return replicator.spawnParent
 end
 
----Counts the number of static instances pending to be spawned on the local machine for a specific replicator
+---Counts the number of static instances pending to be spawned on the local machine for a specific replicator.
 ---@param replicatorId string
 ---@return number
 function API.CountPendingStaticInstancesToSpawn(replicatorId)
     return spawners.static.context.CountPendingInstancesToSpawn(replicatorId)
 end
 
----Counts the number of client instances pending to be spawned on the local machine for a specific replicator
+---Counts the number of client instances pending to be spawned on the local machine for a specific replicator.
 ---@param replicatorId string
 ---@return number
 function API.CountPendingClientInstancesToSpawn(replicatorId)
@@ -131,7 +131,7 @@ function API.CountPendingClientInstancesToSpawn(replicatorId)
     end
 end
 
----Counts the number of server instances pending to be spawned on the local machine for a specific replicator
+---Counts the number of server instances pending to be spawned on the local machine for a specific replicator.
 ---@param replicatorId string
 ---@return number
 function API.CountPendingServerInstancesToSpawn(replicatorId)
@@ -142,24 +142,23 @@ function API.CountPendingServerInstancesToSpawn(replicatorId)
     end
 end
 
---- Spawners call this function before spawning an object so the object can find which instance it is easily
----comment
+--- Spawners call this function before spawning an object so the object can find which instance it is easily.
 ---@param instance instance
 function API.SetCurrentInstance(instance)
     currentInstance = instance
 end
 
---- Called after an instance is spawned to ensure you cant accidentally get a nil instance
+--- Called after an instance is spawned to ensure you cant accidentally get a nil instance.
 function API.ClearCurrentInstance()
     currentInstance = nil
 end
 
---- If called during the spawning of an instance, will return the instance, else nil
+--- If called during the spawning of an instance, will return the instance, else nil.
 function API.GetCurrentInstance()
     return currentInstance
 end
 
---- Returns a table of per-replicator settings that may have been initialized by the UserFunctions
+--- Returns a table of per-replicator settings that may have been initialized by the UserFunctions.
 ---@param replicatorId string
 ---@return table
 function API.GetUserSettings(replicatorId)
@@ -179,7 +178,7 @@ function API.FindReplicatorIdByAncestors(coreObject)
     end
 end
 
----Gets the id of a core object as would be used by the replicator system
+---Gets the id of a core object as would be used by the replicator system.
 ---@param coreObject CoreObject
 ---@return string
 function API.FindReplicatorIdentifier(coreObject)
@@ -198,7 +197,7 @@ function API.RegisterReplicator(replicatorId, functionTable)
     replicators[replicatorId] = functionTable
 end
 
----Clears a replicator and loads all the instances encoded in the string. Server only
+---Clears a replicator and loads all the instances encoded in the string. Server only.
 ---@param replicatorId string
 ---@param bufferString string
 function API.LoadFromBuffer(replicatorId, bufferString)
@@ -210,7 +209,7 @@ function API.LoadFromBuffer(replicatorId, bufferString)
     end
 end
 
----Gives you a string of all the instances in the buffer. Server only
+---Gives you a string of all the instances in the buffer. Server only.
 ---@param replicatorId string the .id of a replicator root
 ---@param forceEncode boolean if true it converts all the instances into bitstring
 ---@return string @Non human readable bit string
@@ -223,7 +222,7 @@ function API.GetBufferString(replicatorId, forceEncode)
     end
 end
 
----Gives you a string of all the instances in the buffer after initialization. Server only
+---Gives you a string of all the instances in the buffer after initialization. Server only.
 ---@param replicatorId string @the .id of a replicator root
 ---@return string @Non human readable bit string
 function API.GetInitialBufferString(replicatorId)
@@ -237,7 +236,7 @@ end
 
 
 
----Creates a new instance table but doesnt register it. See API.AddInstance
+---Creates a new instance table but doesn't register it. See API.AddInstance.
 ---@param replicatorId string
 ---@return instance
 function API.CreateInstance(replicatorId, ...)
@@ -248,7 +247,7 @@ function API.CreateInstance(replicatorId, ...)
     return instance
 end
 
----Manually adds a core object to an instance, associating it with the spawner
+---Manually adds a core object to an instance, associating it with the spawner.
 ---@param coreObject table
 ---@param instance any
 function API.AddCoreObjectToSpawner(coreObject, instance)
@@ -261,7 +260,7 @@ function API.AddCoreObjectToSpawner(coreObject, instance)
     end
 end
 
----Adds an instance into the replicator, it will be automatically syncronized and core objects will be spawned
+---Adds an instance into the replicator, it will be automatically synchronized and core objects will be spawned.
 ---@param instance instance
 function API.AddInstance(instance, localOnly)
     assert(instance.replicatorId)
@@ -271,7 +270,7 @@ function API.AddInstance(instance, localOnly)
     Events.Broadcast(API.Events.AddInstance, replicator.root, instance, localOnly)
 end
 
----Modifies an instance. It will be re-serialized to ensure client and server match
+---Modifies an instance. It will be re-serialized to ensure client and server match.
 ---@param instance instance
 function API.ModifyInstance(instance, localOnly)
     assert(instance.replicatorId)
@@ -281,7 +280,7 @@ function API.ModifyInstance(instance, localOnly)
     Events.Broadcast(API.Events.ModifyInstance, replicator.root, instance, localOnly)
 end
 
----Destroys an instance
+---Destroys an instance.
 ---@param instance instance
 ---@param localOnly boolean|nil @if true, we wont broadcast to the server
 function API.DestroyInstance(instance, localOnly)
@@ -292,7 +291,7 @@ function API.DestroyInstance(instance, localOnly)
     Events.Broadcast(API.Events.DestroyInstance, replicator.root, instance, localOnly)
 end
 
----Destroys all the instances in the replicator
+---Destroys all the instances in the replicator.
 ---@param replicatorId string
 ---@param localOnly boolean|nil @if true, we wont broadcast to the server
 function API.DestroyAllInstances(replicatorId, localOnly)
@@ -301,7 +300,7 @@ function API.DestroyAllInstances(replicatorId, localOnly)
     Events.Broadcast(API.Events.DestroyAllInstances, replicator.root, localOnly)
 end
 
----Returns an array of all the instances for this replicator
+---Returns an array of all the instances for this replicator.
 ---@param replicatorId string
 ---@return instance[]
 function API.GetInstances(replicatorId)
@@ -310,7 +309,7 @@ function API.GetInstances(replicatorId)
     return replicator.GetInstances()
 end
 
----Finds the spawned static core object for an instance
+---Finds the spawned static core object for an instance.
 ---@param instance instance
 ---@return CoreObject
 function API.GetStaticCoreObject(instance)
@@ -318,7 +317,7 @@ function API.GetStaticCoreObject(instance)
     return spawners.static.context.GetCoreObject(instance)
 end
 
----Finds the client spawned core object for an instance
+---Finds the client spawned core object for an instance.
 ---@param instance instance
 ---@return CoreObject
 function API.GetClientCoreObject(instance)
@@ -326,7 +325,7 @@ function API.GetClientCoreObject(instance)
     return spawners.client.context.GetCoreObject(instance)
 end
 
----Finds the server spawned core object for an instance
+---Finds the server spawned core object for an instance.
 ---@param instance instance
 ---@return CoreObject
 function API.GetServerCoreObject(instance)
@@ -334,7 +333,7 @@ function API.GetServerCoreObject(instance)
     return spawners.server.context.GetCoreObject(instance)
 end
 
----Finds the networked spawned core object for an instance
+---Finds the networked spawned core object for an instance.
 ---@param instance instance
 ---@return CoreObject
 function API.GetNetworkedCoreObject(instance)
@@ -342,7 +341,7 @@ function API.GetNetworkedCoreObject(instance)
     return spawners.networked.context.GetCoreObject(instance)
 end
 
----Returns the User Functions for a Replicator
+---Returns the User Functions for a Replicator.
 ---@param replicatorId string
 ---@return table
 function API.GetUserFunctions(replicatorId)
@@ -350,7 +349,7 @@ function API.GetUserFunctions(replicatorId)
     return replicator.userFunctions
 end
 
----Waits for the instance for a core object
+---Waits for the instance for a core object.
 ---@param coreObject CoreObject
 ---@param timeOut number|nil
 ---@return instance
@@ -370,7 +369,7 @@ function API.WaitForInstance(coreObject, timeOut)
     end
 end
 
----Finds the instance associated with this core object
+---Finds the instance associated with this core object.
 ---@param coreObject CoreObject
 ---@return instance
 function API.GetInstance(coreObject)
@@ -419,14 +418,14 @@ function API.GetInstance(coreObject)
     return nil
 end
 
----Gets the private network key used for a replicator
+---Gets the private network key used for a replicator.
 ---@param replicatorId string
 ---@return string
 function API.GetPlayerPrivateNetworkKey(replicatorId)
     return REP_TAG .. replicatorId
 end
 
----Check if a key is one of the keys used for a replicator when using PlayerPrivateNetworkData
+---Check if a key is one of the keys used for a replicator when using PlayerPrivateNetworkData.
 ---@param replicatorId string|nil
 ---@param key string
 ---@return boolean
@@ -441,8 +440,8 @@ function API.IsPlayerPrivateNetworkKey(replicatorId, key)
     end
 end
 
----On the server, this activates the replicator for all players who want to recieve from it
----On the client, its will activate the replicator as long as the replicator is active on the server
+---On the server, this activates the replicator for all players who want to receive from it.
+---On the client, its will activate the replicator as long as the replicator is active on the server.
 ---@param replicatorId string
 ---@param localOnly boolean|nil @if true, we wont broadcast to the server that we activated our replicator
 function API.ActivateReplicator(replicatorId, localOnly)
@@ -450,7 +449,7 @@ function API.ActivateReplicator(replicatorId, localOnly)
     Events.Broadcast(API.Events.ActivateReplicator, replicator.root, localOnly)
 end
 
----On the server, this will deactivate a replicator and all players will have their instances removed
+---On the server, this will deactivate a replicator and all players will have their instances removed.
 ---@param replicatorId string
 ---@param localOnly boolean|nil @if true, we wont broadcast to the server that we deactivated our replicator
 function API.DeactivateReplicator(replicatorId, localOnly)
@@ -458,7 +457,7 @@ function API.DeactivateReplicator(replicatorId, localOnly)
     Events.Broadcast(API.Events.DeactivateReplicator, replicator.root, localOnly)
 end
 
----On the server, this marks that a player wishes to recieve replicated data
+---On the server, this marks that a player wishes to receive replicated data.
 ---@param replicatorId string
 ---@param playerId string
 function API.ActivateReplicatorForPlayer(replicatorId, playerId)
@@ -466,7 +465,7 @@ function API.ActivateReplicatorForPlayer(replicatorId, playerId)
     Events.Broadcast(API.Events.ActivateReplicatorForPlayer, replicator.root, playerId)
 end
 
----On the server, this marks that a player doesnt wish to recieve replicated data
+---On the server, this marks that a player doesn't wish to receive replicated data.
 ---@param replicatorId string
 ---@param playerId string
 function API.DeactivateReplicatorForPlayer(replicatorId, playerId)

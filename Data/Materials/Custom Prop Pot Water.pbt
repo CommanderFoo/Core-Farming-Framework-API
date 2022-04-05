@@ -2,7 +2,7 @@ Assets {
   Id: 3703243427733717207
   Name: "Custom Prop Pot Water"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 2406410966014768844
     ParameterOverrides {

@@ -37,7 +37,7 @@ local API = {}
 local systems = {}
 local lastTime = REALTIME.GetRealTime()
 
----Add a new system
+---Add a new system.
 ---@param id any
 ---@param functionTable TimeSimulatorFunctionTable
 function API.RegisterSystem(id, functionTable)
@@ -47,7 +47,7 @@ function API.RegisterSystem(id, functionTable)
     systems[id] = functionTable
 end
 
----Unregisters a system
+---Unregisters a system.
 ---@param id any
 function API.UnregisterSystem(id)
     systems[id] = nil

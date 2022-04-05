@@ -11,7 +11,7 @@
     ------------------------------
 
     Data Migration is something that you need to do if you change a game setting (like an Item ID) that is referenced in
-    Player's saved datas. Changing something like that will break Player saves because they now refer to an old ID that
+    Player's saved data. Changing something like that will break Player saves because they now refer to an old ID that
     doesn't exist in the game any more.
 
     To deal with this potential problem, we have a basic Data Migration system that will let you fix Player save data if
@@ -38,7 +38,7 @@
     ---  HOW TO ADD A VERSION  ---
     ------------------------------
 
-    Lets say you have changed an Item ID and you need to migrate Players save datas to refer to the new ID.
+    Lets say you have changed an Item ID and you need to migrate Players save data to refer to the new ID.
 
     1. Open the Data Migrations Data Table.
 

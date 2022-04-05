@@ -125,7 +125,7 @@ function API.IsCurrencyLoaded(player, currencyId)
     return currencies[currencyId][player] ~= nil
 end
 
----Returns a setting value for a Currency, or a defualt value if the setting cannot be found.
+---Returns a setting value for a Currency, or a default value if the setting cannot be found.
 ---@param currencyId string
 ---@param setting CurrencySetting
 ---@return any
@@ -319,7 +319,7 @@ function API.RemoveCurrencyAmount(player, currencyId, amount, updateOtherContext
     return true
 end
 
----Sets a Currency to an amount for a PLayer. Returns true if successful.
+---Sets a Currency to an amount for a Player. Returns true if successful.
 ---@param player Player
 ---@param currencyId string
 ---@param amount integer

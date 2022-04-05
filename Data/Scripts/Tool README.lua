@@ -11,7 +11,7 @@
     ------------------------------
 
     Tools are Equipment that can be used to interact with Gatherable Objects and other future systems. Each Tool
-    identifies itself with a ToolType. This is chacked against lists of valid ToolTypes on interactable objects to see
+    identifies itself with a ToolType. This is checked against lists of valid ToolTypes on interactable objects to see
     if the Tool can interact with the object.
 
     Tools make use of the Interaction System to allow for easy to swap interaction styles. They support Look Direction, 
@@ -71,7 +71,7 @@
     Some additional networked properties can also be seen. These should not be modified since they relay state to the
     Tool.
 
-    Each Tool has a "Tool" Ability in it. The values on this Ability can be modified to get the specific behaviour,
+    Each Tool has a "Tool" Ability in it. The values on this Ability can be modified to get the specific behavior,
     timing and animations you are looking for.
 
     --- Tools without Inventory ---
@@ -176,7 +176,7 @@
     --- Art in the Template ---
 
     Add the Tool to the scene and expand its hierarchy. If you dig down you will see a ClientContext and in most cases a
-    "Geo" folder inside that. Art for the Tool can exist anywhere inside the ClientContext. The "Geo" grou is purely for
+    "Geo" folder inside that. Art for the Tool can exist anywhere inside the ClientContext. The "Geo" group is purely for
     organization.
 
         Axe Tool

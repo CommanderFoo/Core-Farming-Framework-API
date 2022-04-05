@@ -27,6 +27,7 @@ local REACTIVE_COMPONENT = require(script:GetCustomProperty("APIReactiveComponen
 -- User Exposed Properties
 local OBJECT_TO_TOGGLE = script:GetCustomProperty("ObjectToToggle"):WaitForObject()
 local HIDE_ON_CHANGE = script:GetCustomProperty("HideOnChange")
+local CHANGE_ON_EMPTY = script:GetCustomProperty("ChangeOnEmpty")
 local CHANGE_ON_PLACED = script:GetCustomProperty("ChangeOnPlaced")
 local CHANGE_ON_BUILD = script:GetCustomProperty("ChangeOnBuild")
 local CHANGE_ON_READY = script:GetCustomProperty("ChangeOnReady")
@@ -34,6 +35,6 @@ local CHANGE_ON_COLLECTED = script:GetCustomProperty("ChangeOnCollected")
 local CHANGE_ON_EXPIRED = script:GetCustomProperty("ChangeOnExpired")
 local CHANGE_ON_REMOVED = script:GetCustomProperty("ChangeOnRemoved")
 
-local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_TOGGLE, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, false, REACTIVE_COMPONENT.BehaviorType.ToggleVisibility, {
+local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_TOGGLE, CHANGE_ON_EMPTY, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, false, REACTIVE_COMPONENT.BehaviorType.ToggleVisibility, {
     HideOnChange = HIDE_ON_CHANGE
 }, true)

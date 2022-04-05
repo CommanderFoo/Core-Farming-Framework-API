@@ -34,6 +34,7 @@ local DATABASE = require(script:GetCustomProperty("APIDatabase"))
 
 local ICON = COMPONENT_ROOT:GetCustomProperty("Icon"):WaitForObject()
 local NAME = COMPONENT_ROOT:GetCustomProperty("Name"):WaitForObject()
+local DISABLED_ICON_TINT = COMPONENT_ROOT:GetCustomProperty("DisabledIconTint") ---@type Color
 
 -- Private Variables
 local recipeId
@@ -75,4 +76,12 @@ function Setup()
         ICON.visibility = Visibility.FORCE_OFF
         NAME.text = ""
     end
+end
+
+function SetAvailable()
+    ICON:SetColor(Color.WHITE)
+end
+
+function SetUnavailable()
+    ICON:SetColor(DISABLED_ICON_TINT)
 end

@@ -74,7 +74,7 @@ function API.GetAllAssignableAreas(areaGroupKey)
     return result
 end
 
----Retuns an Area.
+---Returns an Area.
 ---@param areaId string
 ---@return table
 function API.GetArea(areaId)
@@ -162,7 +162,7 @@ function API.CanPlayerBeAssignedToArea(areaId, areaGroupKey)
     return false
 end
 
----Retuens the Area Id of the Area the Player is currently in.
+---Returns the Area Id of the Area the Player is currently in.
 ---@param player Player
 ---@return string|nil
 function API.GetPlayerArea(player)
@@ -230,7 +230,7 @@ function API.UnlockPlayer(player)
     player.isMovementEnabled = true
 end
 
----Restricts Player mevement.
+---Restricts Player movement.
 ---@param player Player
 function API.LockPlayer(player)
     player.isMovementEnabled = false

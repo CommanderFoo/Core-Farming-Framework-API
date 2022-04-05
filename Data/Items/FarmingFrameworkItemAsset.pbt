@@ -2,7 +2,7 @@ Assets {
   Id: 14354836113005421384
   Name: "FarmingFrameworkItemAsset"
   PlatformAssetType: 33
-  SerializationVersion: 110
+  SerializationVersion: 108
   ItemAsset {
     CustomParameters {
       Overrides {

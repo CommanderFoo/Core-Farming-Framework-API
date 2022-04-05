@@ -2,7 +2,7 @@ Assets {
   Id: 12631805806715885593
   Name: "Custom Craft Clay Terracotta"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 3209393495056831055
     ParameterOverrides {

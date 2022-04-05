@@ -3644,7 +3644,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Crafting"
 }

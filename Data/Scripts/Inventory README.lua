@@ -56,7 +56,7 @@
 
         - This is an Inventory that exists in the world. Each player will be able to access this Inventory and maintain
         their own items in it. Think of it like a Player Stash. These container Inventories can also potentially be
-        stored inside other Inventories, though the flow for that is not currently avalable.
+        stored inside other Inventories, though the flow for that is not currently available.
 
     ------------------------------
     ---         ADMIN          ---
@@ -440,7 +440,7 @@
     6. DragProxyTemplate
 
         - The template to spawn when dragging this Slot. This template should contain specific logic. See the Inventory
-        Screen Slot Drag Proxy tremplate for an example.
+        Screen Slot Drag Proxy template for an example.
 
     The hierarchy for the slot is quite simple and should be easy to update with your own art. If you want to maintain
     functionality, be sure to only adjust and add art without removing the Interaction System Components.

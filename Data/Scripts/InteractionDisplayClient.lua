@@ -183,7 +183,7 @@ function UpdateUI()
     if currentInteractionType == "PlacePlaceable" then
         SetPlacementText()
     elseif currentInteractionType == "PlaceProducer" then
-        ACTION_TEXT.text = string.format("Use %s on %s", GetNameForItem(currentEquipmentSettings.ItemId), GetNameForPlaceable(currentTargetId))
+        ACTION_TEXT.text = string.format("Use %s on %s", GetNameForProducer(currentEquipmentSettings.ItemId), GetNameForPlaceable(currentTargetId))
     elseif currentInteractionType == "CollectProducer" then
         ACTION_TEXT.text = string.format("Collect from %s", GetNameForPlaceable(currentTargetId))
     elseif currentInteractionType == "RemovePlaceable" then
@@ -191,11 +191,11 @@ function UpdateUI()
     elseif currentInteractionType == "BuffPlaceable" then
         ACTION_TEXT.text = string.format("Use %s on %s", GetNameForItem(currentEquipmentSettings.ItemId), GetNameForPlaceable(currentTargetId))
     elseif currentInteractionType == "BuffProducer" then
-        ACTION_TEXT.text = string.format("Use %s on %s", GetNameForItem(currentEquipmentSettings.ItemId), GetNameForPlaceable(currentTargetId))
+        ACTION_TEXT.text = string.format("Use %s on %s", GetNameForItem(currentEquipmentSettings.ItemId), GetNameForProducer(currentTargetId))
     elseif currentInteractionType == "BuildProducer" then
         ACTION_TEXT.text = string.format("Use %s on %s", GetNameForItem(currentEquipmentSettings.ItemId), GetNameForPlaceable(currentTargetId))
     elseif currentInteractionType == "RemoveProducer" then
-        ACTION_TEXT.text = string.format("Remove %s", GetNameForItem(currentTargetId))
+        ACTION_TEXT.text = string.format("Remove %s", GetNameForProducer(currentTargetId))
     elseif currentInteractionType == "GatherFromGatherable" then
         if currentTargetId and currentTargetId ~= "" then
             ACTION_TEXT.text = string.format("Gather from %s", currentTargetId)
@@ -227,7 +227,7 @@ function UpdateUI()
 
             -- Show progress
             if not producerBaseState.isReadyForCollect and producerBaseState.buildRate > 0 and producerBaseState.buildTimeRemaining then
-                ACTION_TEXT.text = string.format("%s", GetNameForItem(currentTargetId))
+                ACTION_TEXT.text = string.format("%s", GetNameForProducer(currentTargetId))
             -- Show collect
             elseif producerBaseState.isReadyForCollect and producerData.CollectInteractionText and producerData.CollectInteractionText ~= "" then
                 ACTION_TEXT.text = producerData.CollectInteractionText
@@ -546,6 +546,15 @@ function GetNameForPlaceable(placeableId)
     else
         -- Fall back to using the Item Id
         return GetNameForItem(placeableId)
+    end
+end
+
+function GetNameForProducer(producerId)
+    if DATABASE.Producers and DATABASE.Producers[producerId] and DATABASE.Producers[producerId].Name and DATABASE.Producers[producerId].Name ~= "" then
+        return DATABASE.Producers[producerId].Name
+    else
+        -- Fall back to using the Item Id
+        return GetNameForItem(producerId)
     end
 end
 

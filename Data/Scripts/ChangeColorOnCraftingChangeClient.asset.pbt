@@ -46,6 +46,10 @@ Assets {
         Bool: false
       }
       Overrides {
+        Name: "cs:Recipes"
+        String: ""
+      }
+      Overrides {
         Name: "cs:ChangeOnCraft"
         Bool: false
       }
@@ -59,6 +63,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Reactive Components"
 }

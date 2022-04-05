@@ -97,7 +97,7 @@
 
             - (Optional) If set, this will allow portals and other teleport methods to target this spawn point.
 
-    Set the Spawn Point up as desired. It is recommeded to set a SpawnPointKey since this allows for multiple Spawn
+    Set the Spawn Point up as desired. It is recommended to set a SpawnPointKey since this allows for multiple Spawn
     Points on a Lot and can make teleporting Players easier.
 
     You should now add any other art you want to add to the Lot group. Once your Lot is set up how you want, you should
@@ -231,7 +231,7 @@
             - If true, and the Replicator has objects already existing in its Static Context folder, these objects will
             be added to its internal state and saved.
 
-    You need to drag the "Replicator" group in the Gatherable or Producer setup into this reference. Your heirarchy
+    You need to drag the "Replicator" group in the Gatherable or Producer setup into this reference. Your hierarchy
     might look something like this.
 
         Lot
@@ -281,7 +281,7 @@
     Set the SpawnPointKey to match the Player Lot Spawn Point key in the target Lots. If it is left blank it will find
     the first available Spawn Point.
 
-    The next booleans will depend on the behaviour that you want for your design. If your Player Lot manager already
+    The next booleans will depend on the behavior that you want for your design. If your Player Lot manager already
     assigns a Lot to the Player when they join, then AssignPlayerToLot doesn't do anything here. You may want the Player
     to pick a Lot out on their own, in which case you would set AssignPlayerToLot to false and use another template to
     let them claim a Lot.
@@ -354,13 +354,13 @@
         3. InteractionText
 
             - (Optional) If "InteractWithTrigger" is true, this text will be displayed.
-            {name} will be replaced by thename of the Lot.
+            {name} will be replaced by the name of the Lot.
             {type} will be replaced by the Lots type.
 
         4. CannotClaimText
 
             - (Optional) If set, this text will display if the Player cannot claim the Lot.
-            {name} will be replaced bythe name of the Lot.
+            {name} will be replaced by the name of the Lot.
             {type} will be replaced by the Lots type.
 
     You can add one of these templates as a child of your Lot and then adjust the Trigger as needed. If you don't fill

@@ -2,7 +2,7 @@ Assets {
   Id: 11142875505686443139
   Name: "Custom Crop Potato"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 16263501854538201902
     ParameterOverrides {

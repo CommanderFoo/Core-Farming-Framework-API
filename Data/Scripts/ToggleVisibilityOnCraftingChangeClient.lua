@@ -27,10 +27,11 @@ local REACTIVE_COMPONENT = require(script:GetCustomProperty("APIReactiveComponen
 -- User Exposed Properties
 local OBJECT_TO_TOGGLE = script:GetCustomProperty("ObjectToToggle"):WaitForObject()
 local HIDE_ON_CHANGE = script:GetCustomProperty("HideOnChange")
+local RECIPES = script:GetCustomProperty("Recipes")
 local CHANGE_ON_CRAFT = script:GetCustomProperty("ChangeOnCraft")
 local CHANGE_ON_READY = script:GetCustomProperty("ChangeOnReady")
 local CHANGE_ON_COLLECTED = script:GetCustomProperty("ChangeOnCollected")
 
-local component = REACTIVE_COMPONENT.NewCraftingStationComponent(script, OBJECT_TO_TOGGLE, CHANGE_ON_CRAFT, CHANGE_ON_READY, CHANGE_ON_COLLECTED, false, REACTIVE_COMPONENT.BehaviorType.ToggleVisibility, {
+local component = REACTIVE_COMPONENT.NewCraftingStationComponent(script, OBJECT_TO_TOGGLE, RECIPES, CHANGE_ON_CRAFT, CHANGE_ON_READY, CHANGE_ON_COLLECTED, false, REACTIVE_COMPONENT.BehaviorType.ToggleVisibility, {
     HideOnChange = HIDE_ON_CHANGE
 }, true)

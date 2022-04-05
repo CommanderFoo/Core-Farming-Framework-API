@@ -28,6 +28,7 @@ local REACTIVE_COMPONENT = require(script:GetCustomProperty("APIReactiveComponen
 local OBJECT_TO_PLAY_STOP = script:GetCustomProperty("ObjectToPlayStop"):WaitForObject()
 local DELAY_SECONDS = script:GetCustomProperty("DelaySeconds")
 local INCLUDE_DESCENDANTS = script:GetCustomProperty("IncludeDescendants")
+local CHANGE_ON_EMPTY = script:GetCustomProperty("ChangeOnEmpty")
 local CHANGE_ON_PLACED = script:GetCustomProperty("ChangeOnPlaced")
 local CHANGE_ON_BUILD = script:GetCustomProperty("ChangeOnBuild")
 local CHANGE_ON_READY = script:GetCustomProperty("ChangeOnReady")
@@ -35,7 +36,7 @@ local CHANGE_ON_COLLECTED = script:GetCustomProperty("ChangeOnCollected")
 local CHANGE_ON_EXPIRED = script:GetCustomProperty("ChangeOnExpired")
 local CHANGE_ON_REMOVED = script:GetCustomProperty("ChangeOnRemoved")
 
-local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_PLAY_STOP, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, false, REACTIVE_COMPONENT.BehaviorType.ToggleEffects, {
+local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_PLAY_STOP, CHANGE_ON_EMPTY, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, false, REACTIVE_COMPONENT.BehaviorType.ToggleEffects, {
     IncludeDescendants = INCLUDE_DESCENDANTS,
     DelaySeconds = DELAY_SECONDS
 }, true)

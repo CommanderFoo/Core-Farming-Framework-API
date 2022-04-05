@@ -24,6 +24,10 @@ Assets {
         Bool: false
       }
       Overrides {
+        Name: "cs:ChangeOnEmpty"
+        Bool: false
+      }
+      Overrides {
         Name: "cs:ChangeOnPlaced"
         Bool: false
       }
@@ -49,6 +53,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Reactive Components"
 }

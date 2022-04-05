@@ -15,7 +15,7 @@
     of unlockable options.
 
     Players can obtain upgrades by purchasing them through Stores, receiving them through Drops, or
-    by directly accessing the ugprades API through code.
+    by directly accessing the upgrades API through code.
 
     Examples uses of upgrades:
     - Purchasing extensions to a house.

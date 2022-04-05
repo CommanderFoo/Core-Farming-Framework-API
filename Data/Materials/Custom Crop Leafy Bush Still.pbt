@@ -2,7 +2,7 @@ Assets {
   Id: 4494347812689418556
   Name: "Custom Crop Leafy Bush Still"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 8653764842698833007
     ParameterOverrides {

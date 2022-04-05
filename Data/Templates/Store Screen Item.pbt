@@ -64,9 +64,9 @@ Assets {
           Overrides {
             Name: "cs:DisabledIconTint"
             Color {
-              R: 0.25
-              G: 0.25
-              B: 0.25
+              R: 0.15
+              G: 0.15
+              B: 0.15
               A: 1
             }
           }
@@ -1102,7 +1102,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Purchasing"
 }

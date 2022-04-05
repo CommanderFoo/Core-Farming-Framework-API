@@ -718,9 +718,6 @@ Assets {
             BoundsScale: 1
           }
         }
-        Relevance {
-          Value: "mc:eproxyrelevance:critical"
-        }
       }
       Objects {
         Id: 10297619296852436270
@@ -864,7 +861,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Inventory"
 }

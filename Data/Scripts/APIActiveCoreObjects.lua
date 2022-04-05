@@ -48,7 +48,7 @@ end
 
 -- Public functions
 
----Marks a core object as being active as FORCE_ON, FORCE_OFF, INHERIT. Or you can use a bool
+---Marks a core object as being active as FORCE_ON, FORCE_OFF, INHERIT. Or you can use a bool.
 ---@param coreObject CoreObject
 ---@param active integer|boolean
 function API.SetActive(coreObject, active)
@@ -67,7 +67,7 @@ function API.SetActive(coreObject, active)
     UpdateHandlers()
 end
 
----Check if any core object is active by looping upwards through the parents and seeing how its ancestors are marked
+---Check if any core object is active by looping upwards through the parents and seeing how its ancestors are marked.
 ---@param coreObject CoreObject
 ---@return boolean
 function API.IsActive(coreObject)
@@ -90,7 +90,7 @@ function API.IsActive(coreObject)
 end
 
 ---Allows you to connect a function to be trigger when core objects activation has changed. This will be called
----if any of its parents have had their activation changed
+---if any of its parents have had their activation changed.
 ---@param coreObject CoreObject
 ---@param onActivationChanged func<CoreObject, boolean>
 ---@return EventHandler @A handler

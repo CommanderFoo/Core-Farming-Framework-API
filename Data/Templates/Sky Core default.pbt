@@ -402,5 +402,5 @@ Assets {
       AssetId: "Sky_CORE_default"
     }
   }
-  SerializationVersion: 110
+  SerializationVersion: 108
 }

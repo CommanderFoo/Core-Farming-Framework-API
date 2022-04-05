@@ -2,7 +2,7 @@ Assets {
   Id: 11237267171393895703
   Name: "Virtual Folders"
   PlatformAssetType: 30
-  SerializationVersion: 110
+  SerializationVersion: 108
   VirtualFolderSetAsset {
     Folders {
       VirtualFolderPath: "Areas"
@@ -262,6 +262,11 @@ Assets {
     Folders {
       VirtualFolderPath: "Functional"
       VirtualFolderPath: "UI"
+      PlatformAssetType: 5
+    }
+    Folders {
+      VirtualFolderPath: "Functional"
+      VirtualFolderPath: "Gatherables"
       PlatformAssetType: 5
     }
   }

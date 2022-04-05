@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.disable": [
+        "undefined-field",
+        "redundant-parameter",
+        "lowercase-global"
+    ],
+    "Lua.completion.autoRequire": false,
+    "Lua.diagnostics.globals": [
+        "safe_min",
+        "nil_zero_or_less",
+        "db_pairs_iter",
+        "db_pairs"
+    ]
+}

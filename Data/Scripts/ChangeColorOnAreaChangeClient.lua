@@ -38,6 +38,6 @@ local CHANGE_ON_EXIT_AREA = script:GetCustomProperty("ChangeOnExitArea")
 local component = REACTIVE_COMPONENT.NewAreaComponent(script, OBJECT_TO_COLOR, AREA, AREA_GROUP_KEY, CHANGE_ON_ENTER_AREA, CHANGE_ON_EXIT_AREA, LOCAL_PLAYER_ONLY, REACTIVE_COMPONENT.BehaviorType.ChangeColor, {
     ActiveColor = CHANGE_COLOR,
     InactiveColor = DEFAULT_COLOR,
-    ColorDescendants = COLOR_DESCENDANTS,
+    IncludeDescendants = COLOR_DESCENDANTS,
     DelaySeconds = DELAY_SECONDS
 }, true)

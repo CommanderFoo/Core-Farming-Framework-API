@@ -250,6 +250,7 @@ function PlaceableControllerBase:NewBuffPlaceableInteraction()
                 if doInteract then
                     self:BuffPlaceableWithTool(player, toolType, equipmentSettings)
                 end
+
                 return true, nil
             else
                 return false, self:GetMissingRequirementsMessage(equipmentSettings.ItemId)
@@ -520,6 +521,7 @@ function PlaceableControllerBase:InitializeBuffData()
         addBuffEffect = {},
         addBuffEffectOffset = {},
         proximityBuffsAddAmount = {},
+        showDebugBuffs = {}
     }
 end
 
@@ -529,12 +531,16 @@ function PlaceableControllerBase:ProcessBuffData(buffs)
     end
 
     for buffId, data in pairs(buffs) do
-        if data.Radius and data.Radius > 0 then
+        if data.CanOutput and data.Radius and data.Radius > 0 then
             self.BuffData.proximityBuffsRadius[buffId] = data.Radius
             self.BuffData.proximityBuffsAddAmount[buffId] = data.AddAmount
 
             if data.Radius then
                 self.BuffData.proximityBuffs[buffId] = true
+            end
+
+            if data.ShowDebug then
+                self.BuffData.showDebugBuffs[buffId] = true
             end
         end
         if data.CanReceive then
@@ -641,6 +647,16 @@ function PlaceableControllerBase:UpdateLinkedBuffs()
     BUFFS.RequestLinkedBuffsUpdate()
 end
 
+function PlaceableControllerBase:ShowBuffsDebug()
+    if not Environment.IsPreview() then return end
+
+    for buffId, _ in pairs(self.BuffData.proximityBuffs) do
+        if self.BuffData.showDebugBuffs[buffId] then
+            CoreDebug.DrawSphere(BUFFS.GetTargetPosition(self.ComponentRoot.id), self.BuffData.proximityBuffsRadius[buffId], { color = Color.RED, thickness = 3, duration = 0.1 })
+        end
+    end
+end
+
 --- Time ---
 
 function PlaceableControllerBase:GetTime()
@@ -668,6 +684,8 @@ function PlaceableControllerBase:OnStepTime(currentTime)
     if currentTime < self.RuntimeState.time then
         return
     end
+
+    self:ShowBuffsDebug()
 
     self.RuntimeState.time = currentTime
     BUFFS.HandleFinishedTimedBuffs(self.ComponentRoot.id)

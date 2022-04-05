@@ -31,6 +31,7 @@ local OBJECT_TO_COLOR = script:GetCustomProperty("ObjectToColor"):WaitForObject(
 local DELAY_SECONDS = script:GetCustomProperty("DelaySeconds")
 local COLOR_DESCENDANTS = script:GetCustomProperty("ColorDescendants")
 local UPDATE_OVER_TIME = script:GetCustomProperty("UpdateOverTime")
+local CHANGE_ON_EMPTY = script:GetCustomProperty("ChangeOnEmpty")
 local CHANGE_ON_PLACED = script:GetCustomProperty("ChangeOnPlaced")
 local CHANGE_ON_BUILD = script:GetCustomProperty("ChangeOnBuild")
 local CHANGE_ON_READY = script:GetCustomProperty("ChangeOnReady")
@@ -38,9 +39,9 @@ local CHANGE_ON_COLLECTED = script:GetCustomProperty("ChangeOnCollected")
 local CHANGE_ON_EXPIRED = script:GetCustomProperty("ChangeOnExpired")
 local CHANGE_ON_REMOVED = script:GetCustomProperty("ChangeOnRemoved")
 
-local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_COLOR, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, UPDATE_OVER_TIME, REACTIVE_COMPONENT.BehaviorType.ChangeColor, {
+local component = REACTIVE_COMPONENT.NewProducerComponent(script, OBJECT_TO_COLOR, CHANGE_ON_EMPTY, CHANGE_ON_PLACED, CHANGE_ON_BUILD, CHANGE_ON_READY, CHANGE_ON_COLLECTED, CHANGE_ON_EXPIRED, CHANGE_ON_REMOVED, UPDATE_OVER_TIME, REACTIVE_COMPONENT.BehaviorType.ChangeColor, {
     ActiveColor = CHANGE_COLOR,
     InactiveColor = DEFAULT_COLOR,
-    ColorDescendants = COLOR_DESCENDANTS,
+    IncludeDescendants = COLOR_DESCENDANTS,
     DelaySeconds = DELAY_SECONDS
 }, true)

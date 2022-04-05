@@ -291,7 +291,7 @@ function OnUpdate()
         local currentHitResult
         local target
         for _, hitResult in ipairs(hitResults) do
-            if hitResult.other and hitResult.other:IsA("CoreObject") then
+            if hitResult.other and hitResult.other:IsA("CoreObject") and Object.IsValid(hitResult.other) then
                 target = INTERACTION.GetTarget(API.Module, hitResult.other)
                 if target then
                     currentHitResult = hitResult

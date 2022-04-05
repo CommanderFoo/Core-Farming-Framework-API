@@ -1241,6 +1241,11 @@
 
                 - The amount of the Buff to add to other targets in the radius.
 
+            j. ShowDebug (Boolean)
+
+                - If true, and CanOutput is true and a Radius is larger than 0, this will draw a debug sphere over the
+                object at the size of the radius while the Buff is being output.
+
     Once all of these data connections are set up, your Buff should work when applied. Some common mistakes include:
 
         1. Forgetting to set up a Tool that can apply the Buff. The "ValidAddBuffToolTypes" needs to include either Tool

@@ -62,7 +62,7 @@
 
     Add one or more "Area Spawn Point" templates as children of the group. Select them to view their properties. Fill
     these out as required. If you are going to use a network of Portals to move between Areas it is likely that you
-    would want an arrival Spoawn Point for each Portal.
+    would want an arrival Spawn Point for each Portal.
 
     1. Area
 
@@ -119,7 +119,7 @@
             {type} can be used and will be replaced with the DestinationAreaKey.
 
     You can do the same thing in the second Area and you will now have 2 Areas that you can move between. Your hierarchy
-    should look somthing like this:
+    should look something like this:
 
         Area 1
         |___ Area Setup
@@ -285,7 +285,7 @@
 
             - Loads and unloads the Replicator when the Area loads and unloads.
 
-    You need to drag the "Replicator" group in the Gatherable or Producer setup into this reference. Your heirarchy
+    You need to drag the "Replicator" group in the Gatherable or Producer setup into this reference. Your hierarchy
     might look something like this.
 
         Area
@@ -303,7 +303,7 @@
     ----------------------------------
 
     You can display the name of the current Area to the Player by using the "Area name UI" template. Just add it to your
-    heirarchy and it will automatically start working. You can change what text is displayed if the Player is ever not
+    hierarchy and it will automatically start working. You can change what text is displayed if the Player is ever not
     in an Area by setting the "UnknownAreaText" property, but this should never happen if Areas have been set up
     correctly.
 
@@ -315,7 +315,7 @@
     ---   AREA CHANGE COMPONENTS   ---
     ----------------------------------
 
-    In some cases you migth want things to happen when a Player moves from one Area to another. There are some
+    In some cases you might want things to happen when a Player moves from one Area to another. There are some
     components that help make this easier. They can be found in Project Content under "My Scripts" -> "Areas".
 
     ToggleEffectsOnAreaChangeClient
@@ -333,11 +333,11 @@
 
         3. Effects
 
-            - The Audio / Vfx or heirarchy containing multiple Audio and Vfx objects that you want to control.
+            - The Audio / Vfx or hierarchy containing multiple Audio and Vfx objects that you want to control.
 
         4. IncludeChildren
 
-            - If true, the entire heirarchy referenced in "Effects" will be searched for Audio and Vfx, otherwise only
+            - If true, the entire hierarchy referenced in "Effects" will be searched for Audio and Vfx, otherwise only
             the top level will be searched.
 
         5. DelaySeconds
@@ -383,11 +383,11 @@
 
         3. ObjectsToChange
 
-            - The object or heirarchy containing multiple that you want to control.
+            - The object or hierarchy containing multiple that you want to control.
 
         4. IncludeChildren
 
-            - If true, the entire heirarchy referenced in "ObjectsToChange" will be searched for objects, otherwise only
+            - If true, the entire hierarchy referenced in "ObjectsToChange" will be searched for objects, otherwise only
             the top level will be searched.
 
         5. DelaySeconds
@@ -433,11 +433,11 @@
 
         3. ObjectsToChange
 
-            - The object or heirarchy containing multiple that you want to control.
+            - The object or hierarchy containing multiple that you want to control.
 
         4. IncludeChildren
 
-            - If true, the entire heirarchy referenced in "ObjectsToChange" will be searched for objects, otherwise only
+            - If true, the entire hierarchy referenced in "ObjectsToChange" will be searched for objects, otherwise only
             the top level will be searched.
 
         5. DelaySeconds

@@ -2,7 +2,7 @@ Assets {
   Id: 1415137454169881643
   Name: "Custom Detail 2 from Urban Bottle Juice 02"
   PlatformAssetType: 13
-  SerializationVersion: 110
+  SerializationVersion: 108
   CustomMaterialAsset {
     BaseMaterialId: 347924126370266606
     ParameterOverrides {
