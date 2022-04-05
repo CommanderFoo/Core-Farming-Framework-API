@@ -18,30 +18,30 @@ Clicking Items that have been configured to be Equipment will optionally equip t
 
 | Event Name | Return Type | Description | Tags |
 | ---------- | ----------- | ----------- | ---- |
-| `InventoryAdded` | Event&lt;Player, inventoryId, itemType, itemId, amountData&gt; | Sent each time an Item is added to an Inventory for a Player. This event sends on the server as well as the | Server |
-| `InventoryCleared` | Event&lt;Player, inventoryId, resetToStartingItems&gt; | Sent each time an Inventory is cleared for a Player. Clearing an Inventory can optionally reset it to have its | Server |
-| `InventoryLoaded` | Event&lt;Player, inventoryId&gt; | Sent when an Inventory is loaded on both server and the client for the Player that loaded the Inventory. | Server |
-| `InventoryRegistered` | Event&lt;inventoryId&gt; | Sent when an Inventory is registered on the server. Probably not super useful, but could be listened to to | Server |
-| `InventoryRemoved` | Event&lt;Player, inventoryId, itemType, itemId, amountData&gt; | Sent each time an Item is removed from an Inventory for a Player. This event sends on the server as well as | Server |
-| `InventorySaved` | Event&lt;Player, inventoryId&gt; | Sent on the server each time an Inventory for a Player is saved. | Server |
-| `InventoryTransferred` | Event&lt;Player, sourceInventoryId, sourceSlotIndex, targetInventoryId, targetSlotIndex&gt; | Sent each time an Item is moved from one slot to another in the same or to another Inventory for a Player. | Server |
-| `InventoryUnregistered` | Event&lt;inventoryId&gt; | Sent when an Inventory is unregistered on the server. | Server |
-| `SlotClicked` | Event&lt;Player, inventoryId, slotIndex&gt; | Sent from the provided InventoryScreenSlot when clicked. If a custom UI is created this Event will need to be | Client |
-| `SlotDropped` | Event&lt;Player, sourceInventoryId, sourceSlotIndex, dropTargetId, targetInventoryId, targetSlotIndex&gt; | Sent from the provided InventoryScreenSlot when dropped. If a custom UI is created this Event will need to be | Client |
-| `SlotEquipped` | Event&lt;inventoryId, slotIndex&gt; | Sent to the client of the Player that equipped the Item in their Inventory. | Client |
-| `SlotRightClicked` | Event&lt;Player, inventoryId, slotIndex&gt; | Sent from the provided InventoryScreenSlot when right-clicked. If a custom UI is created this Event will need to be | Client |
-| `SlotUnequipped` | Event&lt;inventoryId, slotIndex&gt; | Sent to the client of the Player that unequipped the Item in their Inventory. | Client |
+| `InventoryAdded` | `Event<Player, inventoryId, itemType, itemId, amountData>`| Sent each time an Item is added to an Inventory for a Player. This event sends on the server as well as the | Server |
+| `InventoryCleared` | `Event<Player, inventoryId, resetToStartingItems>`| Sent each time an Inventory is cleared for a Player. Clearing an Inventory can optionally reset it to have its | Server |
+| `InventoryLoaded` | `Event<Player, inventoryId>`| Sent when an Inventory is loaded on both server and the client for the Player that loaded the Inventory. | Server |
+| `InventoryRegistered` | `Event<inventoryId>`| Sent when an Inventory is registered on the server. Probably not super useful, but could be listened to to | Server |
+| `InventoryRemoved` | `Event<Player, inventoryId, itemType, itemId, amountData>`| Sent each time an Item is removed from an Inventory for a Player. This event sends on the server as well as | Server |
+| `InventorySaved` | `Event<Player, inventoryId>`| Sent on the server each time an Inventory for a Player is saved. | Server |
+| `InventoryTransferred` | `Event<Player, sourceInventoryId, sourceSlotIndex, targetInventoryId, targetSlotIndex>`| Sent each time an Item is moved from one slot to another in the same or to another Inventory for a Player. | Server |
+| `InventoryUnregistered` | `Event<inventoryId>`| Sent when an Inventory is unregistered on the server. | Server |
+| `SlotClicked` | `Event<Player, inventoryId, slotIndex>`| Sent from the provided InventoryScreenSlot when clicked. If a custom UI is created this Event will need to be | Client |
+| `SlotDropped` | `Event<Player, sourceInventoryId, sourceSlotIndex, dropTargetId, targetInventoryId, targetSlotIndex>`| Sent from the provided InventoryScreenSlot when dropped. If a custom UI is created this Event will need to be | Client |
+| `SlotEquipped` | `Event<inventoryId, slotIndex>`| Sent to the client of the Player that equipped the Item in their Inventory. | Client |
+| `SlotRightClicked` | `Event<Player, inventoryId, slotIndex>`| Sent from the provided InventoryScreenSlot when right-clicked. If a custom UI is created this Event will need to be | Client |
+| `SlotUnequipped` | `Event<inventoryId, slotIndex>`| Sent to the client of the Player that unequipped the Item in their Inventory. | Client |
 
 ## Functions
 
 | Class Function Name | Return Type | Description | Tags |
 | ------------------- | ----------- | ----------- | ---- |
 | `AddToInventory(Player, string|nil, integer, string, integer, integer, boolean, boolean)` | `boolean` | Adds an amount of an item to one or More Inventories for a Player. If slotIndex is used this will only use that slot, otherwise it will look for available slots. | None |
-| `CanAddItemsToInventory(Player, string|nil, table&lt;string, integer&gt;, boolean)` | `string`, `boolean` | Returns true if the list of Items can fit in the Inventory specified, or in any available Inventories. | None |
+| `CanAddItemsToInventory(Player, string|nil, table<string, integer>, boolean)` | `string`, `boolean` | Returns true if the list of Items can fit in the Inventory specified, or in any available Inventories. | None |
 | `CanAddToInventory(Player, string, integer, string, integer, integer, boolean)` | `string`, `boolean` | Returns true if an amount of an item can be added to a specific Inventory for a Player. If slotIndex is used this will only check that slot, otherwise it will look for available slots. | None |
 | `CanAddToInventoryFromDrops(Player, string|nil, table, boolean)` | `boolean` | Returns true if a set of Drops can fit in the Inventory specified, or in any available Inventories. | None |
 | `CanRemoveFromInventory(Player, string|nil, integer, string, integer, integer, boolean)` | `boolean` | Returns true if an amount of an item can be removed from a specific Inventory for a Player. If slotIndex is used this will  only check that slot, otherwise it will check the entire Inventory. | None |
-| `CanRemoveItemsFromInventory(Player, string|nil, table&lt;string, integer&gt;, boolean)` | `string`, `boolean` | Returns true if the list of Items can be removed from the Inventory specified, or from any available Inventories. | None |
+| `CanRemoveItemsFromInventory(Player, string|nil, table<string, integer>, boolean)` | `string`, `boolean` | Returns true if the list of Items can be removed from the Inventory specified, or from any available Inventories. | None |
 | `CanTransferToInventory(Player, string, integer, string, integer)` | `boolean` | Returns true if a slot can be moved from one Inventory to another, or to another slot in the same Inventory. If targetSlotIndex is not  defined a target slot will be found. | None |
 | `ClearAllInventories(Player)` | `None` | Resets all storage keys for inventories from a given player, and clears any inventory data from player storage. | None |
 | `ClearInventory(Player, string, boolean, boolean)` | `boolean` | Clears an Inventory for a Player. | None |

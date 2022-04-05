@@ -17,11 +17,11 @@ templates loaded into client, server or static contexts and more.
 
 | Event Name | Return Type | Description | Tags |
 | ---------- | ----------- | ----------- | ---- |
-| `AreaFinishedLoading` | Event&lt;areaId&gt; | This event is sent every time an Area finishes loading. | Server |
-| `AreaFinishedUnloading` | Event&lt;areaId&gt; | This event is sent every time an Area finishes unloading. | Server |
-| `PlayerAreaChanged` | Event&lt;Player, areaId, lastAreaId&gt; | This event is sent every time a Player moves to an Area. | Server |
-| `PlayerFinishedLoadingArea` | Event&lt;Player&gt; | This event is sent from the client to the server when a Player finishes loading an Area. | Server |
-| `TeleportToArea` | Event&lt;Player, areaId, areaKey, targetPosition, targetRotation, spawnPointKey&gt; | This event is sent from the client to the server, or server to server when a Player enters a portal or clicks | Server |
+| `AreaFinishedLoading` | `Event<areaId>`| This event is sent every time an Area finishes loading. | Server |
+| `AreaFinishedUnloading` | `Event<areaId>`| This event is sent every time an Area finishes unloading. | Server |
+| `PlayerAreaChanged` | `Event<Player, areaId, lastAreaId>`| This event is sent every time a Player moves to an Area. | Server |
+| `PlayerFinishedLoadingArea` | `Event<Player>`| This event is sent from the client to the server when a Player finishes loading an Area. | Server |
+| `TeleportToArea` | `Event<Player, areaId, areaKey, targetPosition, targetRotation, spawnPointKey>`| This event is sent from the client to the server, or server to server when a Player enters a portal or clicks | Server |
 
 ## Functions
 

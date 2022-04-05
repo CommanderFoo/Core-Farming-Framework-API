@@ -61,7 +61,7 @@ class API_Gen {
 				params.push({
 					
 					name: current_line.replace(/^---@param\s?/i, "").replace("\r", "").split(" ")[0],
-					type: type.replace("<", "&lt;").replace(">", "&gt;"),
+					type,
 					param_index: index
 
 				});
@@ -161,7 +161,7 @@ class API_Gen {
 						events.push({
 
 							event: line.match(/Events\.(\w+)/)[1],
-							ret: ret_str.replace("<", "&lt;").replace(">", "&gt;"),
+							ret: ret_str,
 							tag: lines[index + 2].match(/ - (Server|Client|Server \/ Client)/)[1],
 							desc: lines[index + 4].split("- ")[1]
 
@@ -185,7 +185,7 @@ class API_Gen {
 
 		events.forEach((entry, index) => {
 			output += "| `" + entry.event + "` ";
-			output += "| Event&lt;" + entry.ret + "&gt; ";
+			output += "| `Event<" + entry.ret + ">`";
 			output += "| " + entry.desc.replace(/[\r\n]+$/, "") + " ";
 
 			if(entry.tag && entry.tag.length){

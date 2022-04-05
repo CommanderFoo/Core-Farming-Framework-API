@@ -15,13 +15,13 @@ For example, a Currency could be used to track the scores in a game.
 
 | Event Name | Return Type | Description | Tags |
 | ---------- | ----------- | ----------- | ---- |
-| `CurrencyAdded` | Event&lt;Player, currencyId, amountAdded&gt; | Sent each time an amount is added to a Currency for a Player. This event sends on the server as well as the | Server |
-| `CurrencyLoaded` | Event&lt;Player, currencyId&gt; | Sent when an Currency is loaded on both server and the client for the Player that loaded the Currency. | Server |
-| `CurrencyRegistered` | Event&lt;currencyId&gt; | Sent when an Currency is registered on the server. | Server |
-| `CurrencyRemoved` | Event&lt;Player, currencyId, amountRemoved&gt; | Sent each time an amount is removed from a Currency for a Player. This event sends on the server as well as | Server |
-| `CurrencySaved` | Event&lt;Player, currencyId&gt; | Sent on the server each time an Currency for a Player is saved. | Server |
-| `CurrencySet` | Event&lt;Player, currencyId, amountSet&gt; | Sent each time a Currency is set to a specific amount for a Player. This event sends on the server as well as | Server |
-| `CurrencyUnregistered` | Event&lt;currencyId&gt; | Sent when an Currency is unregistered on the server. | Server |
+| `CurrencyAdded` | `Event<Player, currencyId, amountAdded>`| Sent each time an amount is added to a Currency for a Player. This event sends on the server as well as the | Server |
+| `CurrencyLoaded` | `Event<Player, currencyId>`| Sent when an Currency is loaded on both server and the client for the Player that loaded the Currency. | Server |
+| `CurrencyRegistered` | `Event<currencyId>`| Sent when an Currency is registered on the server. | Server |
+| `CurrencyRemoved` | `Event<Player, currencyId, amountRemoved>`| Sent each time an amount is removed from a Currency for a Player. This event sends on the server as well as | Server |
+| `CurrencySaved` | `Event<Player, currencyId>`| Sent on the server each time an Currency for a Player is saved. | Server |
+| `CurrencySet` | `Event<Player, currencyId, amountSet>`| Sent each time a Currency is set to a specific amount for a Player. This event sends on the server as well as | Server |
+| `CurrencyUnregistered` | `Event<currencyId>`| Sent when an Currency is unregistered on the server. | Server |
 
 ## Functions
 
@@ -33,7 +33,7 @@ For example, a Currency could be used to track the scores in a game.
 | `GetCurrencyIdFromKey(string)` | `string` | Returns the Currency id associated with a Currency key. | None |
 | `GetCurrencyKey(string)` | `string` | Returns a key used for Storage and networking. | None |
 | `GetSetting(string, CurrencySetting)` | `any` | Returns a setting value for a Currency, or a default value if the setting cannot be found. | None |
-| `HasRoomForCurrencies(Player, table&lt;string, integer&gt;)` | `boolean` | Returns true if the list of Currencies and amounts can fit within their maximums. | None |
+| `HasRoomForCurrencies(Player, table<string, integer>)` | `boolean` | Returns true if the list of Currencies and amounts can fit within their maximums. | None |
 | `HasRoomForCurrency(Player, string, integer)` | `boolean` | Returns true if there is enough room in a Currency to add an amount to it. | None |
 | `HasRoomForCurrencyFromDrops(Player, DropResults)` | `boolean` | Returns true if a set of Drops can be added to one or more Currencies. | None |
 | `IsCurrencyKey(string)` | `boolean` | Returns true if the key is a Currency key. | None |
