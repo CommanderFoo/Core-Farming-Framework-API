@@ -2,7 +2,7 @@ Assets {
   Id: 8054632445515465747
   Name: "Custom Craft Dish Porcelain"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 15478801679715207853
     ParameterOverrides {

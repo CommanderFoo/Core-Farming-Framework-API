@@ -2,7 +2,7 @@ Assets {
   Id: 6931349715577936416
   Name: "Custom Prop Light Corrugated Rotated"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 5513235304061519975
     ParameterOverrides {

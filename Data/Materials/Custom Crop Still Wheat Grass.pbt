@@ -2,7 +2,7 @@ Assets {
   Id: 5262558939979870818
   Name: "Custom Crop Still Wheat Grass"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 3063632184274471005
     ParameterOverrides {

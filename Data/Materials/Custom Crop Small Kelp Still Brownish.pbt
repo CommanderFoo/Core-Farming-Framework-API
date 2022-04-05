@@ -2,7 +2,7 @@ Assets {
   Id: 7281493517602497473
   Name: "Custom Crop Small Kelp Still Brownish"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 18104699263672955032
     ParameterOverrides {

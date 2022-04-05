@@ -2,7 +2,7 @@ Assets {
   Id: 17651528715135381342
   Name: "Custom Crop Dead Still Ivy"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 2708568764956227897
     ParameterOverrides {

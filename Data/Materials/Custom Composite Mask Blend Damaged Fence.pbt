@@ -2,7 +2,7 @@ Assets {
   Id: 7253060865167261432
   Name: "Custom Composite Mask Blend Damaged Fence"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 17752943452224290169
     ParameterOverrides {

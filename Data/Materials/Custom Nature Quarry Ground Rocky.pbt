@@ -2,7 +2,7 @@ Assets {
   Id: 367062359584612131
   Name: "Custom Nature Quarry Ground Rocky"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 17752943452224290169
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 2861838691059339416
   Name: "Currencies - Farm"
   PlatformAssetType: 31
-  SerializationVersion: 108
+  SerializationVersion: 110
   VirtualFolderPath: "Farming Tables"
   DataTableAsset {
     HasKeyColumn: true

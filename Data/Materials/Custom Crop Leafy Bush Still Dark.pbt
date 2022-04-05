@@ -2,7 +2,7 @@ Assets {
   Id: 13460382410986023338
   Name: "Custom Crop Leafy Bush Still Dark"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 8653764842698833007
     ParameterOverrides {

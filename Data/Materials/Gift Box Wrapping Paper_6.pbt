@@ -2,7 +2,7 @@ Assets {
   Id: 9650903276196872825
   Name: "Gift Box Wrapping Paper"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 14627936921496919989
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 10387267074496823845
   Name: "Custom Craft Food Grape Juice"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 3520688045900186889
     ParameterOverrides {

@@ -2,7 +2,7 @@ Assets {
   Id: 2177181377895567687
   Name: "Custom Composite Triplanar Blend Damaged House"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 8018064924197854427
     ParameterOverrides {

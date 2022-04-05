@@ -163,6 +163,9 @@ Assets {
             BoundsScale: 1
           }
         }
+        Relevance {
+          Value: "mc:eproxyrelevance:critical"
+        }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
@@ -200,7 +203,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 108
+  SerializationVersion: 110
   VirtualFolderPath: "Art and Collision - Farm"
   VirtualFolderPath: "Items - Placeable"
 }

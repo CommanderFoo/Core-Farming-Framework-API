@@ -2,7 +2,7 @@ Assets {
   Id: 2218465213083495607
   Name: "Custom Craft Dish Bottle Glass"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 17911493215650062114
     ParameterOverrides {

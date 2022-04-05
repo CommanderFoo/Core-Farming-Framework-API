@@ -2,7 +2,7 @@ Assets {
   Id: 3126861794795096530
   Name: "Custom Grid Enviroment"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 6997832959234811721
     ParameterOverrides {

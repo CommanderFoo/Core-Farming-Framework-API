@@ -2,7 +2,7 @@ Assets {
   Id: 13598449967428429274
   Name: "Custom Craft Food Cider"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 2406410966014768844
     ParameterOverrides {

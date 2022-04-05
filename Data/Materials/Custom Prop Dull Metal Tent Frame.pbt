@@ -2,7 +2,7 @@ Assets {
   Id: 13558678829997240470
   Name: "Custom Prop Dull Metal Tent Frame"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 5622237518630555522
     ParameterOverrides {

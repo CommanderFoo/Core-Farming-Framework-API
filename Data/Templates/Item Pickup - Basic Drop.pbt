@@ -381,7 +381,7 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 108
+  SerializationVersion: 110
   VirtualFolderPath: "Functional"
   VirtualFolderPath: "Inventory"
 }

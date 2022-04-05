@@ -2,7 +2,7 @@ Assets {
   Id: 3329628360835978081
   Name: "Custom Fertilizer Liquid"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 10253243655363465782
     ParameterOverrides {

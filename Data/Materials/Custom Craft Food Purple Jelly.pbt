@@ -2,7 +2,7 @@ Assets {
   Id: 288066589582473913
   Name: "Custom Craft Food Purple Jelly"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 14078139067324804146
     ParameterOverrides {

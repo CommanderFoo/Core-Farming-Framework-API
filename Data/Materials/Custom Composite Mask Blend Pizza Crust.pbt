@@ -2,7 +2,7 @@ Assets {
   Id: 443387312475197268
   Name: "Custom Composite Mask Blend Pizza Crust"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 17752943452224290169
     ParameterOverrides {

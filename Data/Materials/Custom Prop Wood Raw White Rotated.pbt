@@ -2,7 +2,7 @@ Assets {
   Id: 13850988888007816936
   Name: "Custom Prop Wood Raw White Rotated"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 14231809728886464860
     ParameterOverrides {

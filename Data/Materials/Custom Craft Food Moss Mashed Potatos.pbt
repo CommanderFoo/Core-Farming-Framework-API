@@ -2,7 +2,7 @@ Assets {
   Id: 9277536115046593126
   Name: "Custom Craft Food Moss Mashed Potatos"
   PlatformAssetType: 13
-  SerializationVersion: 108
+  SerializationVersion: 110
   CustomMaterialAsset {
     BaseMaterialId: 84881695398198198
     ParameterOverrides {

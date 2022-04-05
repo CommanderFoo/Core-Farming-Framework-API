@@ -45,6 +45,6 @@ Assets {
       }
     }
   }
-  SerializationVersion: 108
+  SerializationVersion: 110
   VirtualFolderPath: "Equipment"
 }
