@@ -486,6 +486,8 @@ The Farming Framework brings the power of the Producers, Buffs, and Areas to mak
 			readme_contents = await this.get_file(path + readme_item.readme + " README.lua");
 		}
 
+		//console.log(path + key + "_Examples.lua")
+		
 		if(existsSync(path + key + "_Examples.lua")){
 			examples_content = await this.get_file(path + key.replace(/\s+/g, "") + "_Examples.lua");
 		}

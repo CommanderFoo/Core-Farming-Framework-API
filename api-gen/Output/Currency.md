@@ -43,3 +43,32 @@ For example, a Currency could be used to track the scores in a game.
 | `RemoveCurrencyAmount(Player, string, integer, boolean)` | `boolean` | Removes an amount from a Currency for a Player. Returns true if successful. | None |
 | `SetCurrencyAmount(Player, string, integer, boolean)` | `boolean` | Sets a Currency to an amount for a Player. Returns true if successful. | None |
 | `UnregisterCurrency(string)` | `None` | Server Only. Unregisters a Currency. | None |
+
+## Examples
+
+Example using:
+
+### `SetCurrencyAmount`
+
+### `GetCurrencyAmount`
+
+### `HasRoomForCurrency`
+
+In this example, the player's coins will be doubled when coins has been added.
+
+```lua
+local CURRENCY = require(script:GetCustomProperty("APICurrency"))
+
+local coinsMultiplier = 2
+local currency = "coins"
+
+local function OnCurrencyAdded(player, currencyId, amountAdded)
+    if coinsMultiplier > 1 and currencyId == currency and CURRENCY.HasRoomForCurrency(player, currencyId, amountAdded) then
+        local currentAmount = CURRENCY.GetCurrencyAmount(player, currencyId)
+
+        CURRENCY.SetCurrencyAmount(player, currencyId, currentAmount + (amountAdded * coinsMultiplier))
+    end
+end
+
+Events.Connect(CURRENCY.Events.CurrencyAdded, OnCurrencyAdded)
+```

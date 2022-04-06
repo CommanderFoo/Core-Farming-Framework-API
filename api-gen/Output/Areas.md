@@ -46,21 +46,3 @@ templates loaded into client, server or static contexts and more.
 | `RegisterAssignableAreaGroup(string, string, integer)` | `None` | Registers an assignable Area group. | None |
 | `SendPlayerToArea(Player, string)` | `None` | Assigns a Player to a specific Area. | None |
 | `UnlockPlayer(Player)` | `None` | Allows a Player to move. | None |
-
-## Examples
-
-Example using:
-
-### `GetAllAreas`
-
-Get all areas that have been registered in the game.
-
-```lua
--- local API_AREAS = require(script:GetCustomProperty("APIAreas"))
-
--- local allAreas = API_AREAS.GetAllAreas()
-
--- for index, area in ipairs(allAreas) do
-
--- end
-```

@@ -1,6 +1,6 @@
 Entries {
   Key {
-    StringVar: "BackYardPlaceables__v"
+    StringVar: "INV_inventory__v"
   }
   SimpleValue {
     IntVar: 0
@@ -8,144 +8,10 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "Tool Truck"
-  }
-  SimpleValue {
-    Table {
-      Entries {
-        Key {
-          StringVar: "Purchases"
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                StringVar: "Metal"
-              }
-              SimpleValue {
-                Table {
-                  Entries {
-                    Key {
-                      StringVar: "Amount"
-                    }
-                    SimpleValue {
-                      IntVar: 2
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-Entries {
-  Key {
-    StringVar: "INV_hotbar_V"
+    StringVar: "Sunshine Seeds_V"
   }
   SimpleValue {
     IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "INV_inventory_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "BackYardDebris__v"
-  }
-  SimpleValue {
-    IntVar: 0
-  }
-}
-Entries {
-  Key {
-    StringVar: "INV_inventory"
-  }
-  SimpleValue {
-    Table {
-      Entries {
-        Key {
-          IntVar: 1
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                StringVar: "a"
-              }
-              SimpleValue {
-                IntVar: 26
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "i"
-              }
-              SimpleValue {
-                StringVar: "Plant Debris"
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "t"
-              }
-              SimpleValue {
-                IntVar: 1
-              }
-            }
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 2
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                StringVar: "a"
-              }
-              SimpleValue {
-                IntVar: 12
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "i"
-              }
-              SimpleValue {
-                StringVar: "Carrot Seed"
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "t"
-              }
-              SimpleValue {
-                IntVar: 1
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-Entries {
-  Key {
-    StringVar: "INV_hotbar__v"
-  }
-  SimpleValue {
-    IntVar: 0
   }
 }
 Entries {
@@ -162,7 +28,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -178,7 +44,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -195,7 +61,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -211,7 +77,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -228,7 +94,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -244,7 +110,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -261,7 +127,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -277,7 +143,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -294,7 +160,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -305,15 +171,15 @@ Entries {
                 StringVar: "i"
               }
               SimpleValue {
-                StringVar: "Rusty Axe"
+                StringVar: "Carrot Seed"
               }
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
-                IntVar: 1
+                IntVar: 12
               }
             }
           }
@@ -327,7 +193,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -343,7 +209,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -360,10 +226,10 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
-                IntVar: 12
+                IntVar: 1
               }
             }
             Entries {
@@ -376,10 +242,10 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
-                IntVar: 1
+                IntVar: 12
               }
             }
           }
@@ -393,7 +259,7 @@ Entries {
           Table {
             Entries {
               Key {
-                StringVar: "a"
+                StringVar: "t"
               }
               SimpleValue {
                 IntVar: 1
@@ -409,7 +275,7 @@ Entries {
             }
             Entries {
               Key {
-                StringVar: "t"
+                StringVar: "a"
               }
               SimpleValue {
                 IntVar: 1
@@ -423,7 +289,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "Fruit Stand"
+    StringVar: "INV_inventory"
   }
   SimpleValue {
     Table {
@@ -432,120 +298,7 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "INV_inventory__v"
-  }
-  SimpleValue {
-    IntVar: 0
-  }
-}
-Entries {
-  Key {
-    StringVar: "PSV"
-  }
-  SimpleValue {
-    IntVar: 2
-  }
-}
-Entries {
-  Key {
-    StringVar: "UPGC_House"
-  }
-  SimpleValue {
-    StringVar: "Damaged House"
-  }
-}
-Entries {
-  Key {
-    StringVar: "UPGC_Gate"
-  }
-  SimpleValue {
-    StringVar: "Starter Gate"
-  }
-}
-Entries {
-  Key {
-    StringVar: "__GlobalStore_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "UPGC_Fruit Stand"
-  }
-  SimpleValue {
-    StringVar: "Damaged Fruit Stand"
-  }
-}
-Entries {
-  Key {
-    StringVar: "BackYardPlaceables"
-  }
-  SimpleValue {
-    StringVar: "baaoaVtFH+eLGmveaaaaaaaaaaaaaca\022a43CEba"
-  }
-}
-Entries {
-  Key {
-    StringVar: "UPG_AddedUpgrades"
-  }
-  SimpleValue {
-    StringVar: "Locked Land 1%Locked Land 2%Locked Land 3%Locked Land 4%Locked Land 5%Locked Land 6%Damaged Gate%Damaged House%Damaged Fruit Stand%Starter Gate%Land Expansion 2"
-  }
-}
-Entries {
-  Key {
-    StringVar: "BackYardDebris"
-  }
-  SimpleValue {
-    StringVar: "bacaZa@@@@@@@@@@@`B`G@@@@@@@H@@@@@@@@@@`A@F@@@@@@@@@@@@@@"
-  }
-}
-Entries {
-  Key {
-    StringVar: "FrontYardDebris"
-  }
-  SimpleValue {
-    StringVar: "babasaA@@j@@@@@@@@@@@@@@"
-  }
-}
-Entries {
-  Key {
-    StringVar: "UPGC_Farm Land"
-  }
-  SimpleValue {
-    StringVar: "Land Expansion 2"
-  }
-}
-Entries {
-  Key {
-    StringVar: "Better Breads_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "Better Breads"
-  }
-  SimpleValue {
-    Table {
-    }
-  }
-}
-Entries {
-  Key {
-    StringVar: "Tool Truck_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "Penny Produce"
+    StringVar: "Tool Truck"
   }
   SimpleValue {
     Table {
@@ -562,53 +315,109 @@ Entries {
 }
 Entries {
   Key {
+    StringVar: "UPGC_Farm Land"
+  }
+  SimpleValue {
+    StringVar: "Locked Land 6"
+  }
+}
+Entries {
+  Key {
+    StringVar: "Penny Produce_V"
+  }
+  SimpleValue {
+    IntVar: 1
+  }
+}
+Entries {
+  Key {
+    StringVar: "FrontYardPlaceables"
+  }
+  SimpleValue {
+    StringVar: ""
+  }
+}
+Entries {
+  Key {
+    StringVar: "FrontYardDebris__v"
+  }
+  SimpleValue {
+    IntVar: 0
+  }
+}
+Entries {
+  Key {
+    StringVar: "Fruit Stand"
+  }
+  SimpleValue {
+    Table {
+    }
+  }
+}
+Entries {
+  Key {
     StringVar: "__GlobalStore"
   }
   SimpleValue {
     Table {
-      Entries {
-        Key {
-          StringVar: "Purchases"
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                StringVar: "Metal"
-              }
-              SimpleValue {
-                Table {
-                  Entries {
-                    Key {
-                      StringVar: "Amount"
-                    }
-                    SimpleValue {
-                      IntVar: 4
-                    }
-                  }
-                }
-              }
-            }
-            Entries {
-              Key {
-                StringVar: "Starter Gate Repair"
-              }
-              SimpleValue {
-                Table {
-                  Entries {
-                    Key {
-                      StringVar: "Amount"
-                    }
-                    SimpleValue {
-                      IntVar: 1
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    }
+  }
+}
+Entries {
+  Key {
+    StringVar: "UPGC_Fruit Stand"
+  }
+  SimpleValue {
+    StringVar: "Damaged Fruit Stand"
+  }
+}
+Entries {
+  Key {
+    StringVar: "Fruit Stand_V"
+  }
+  SimpleValue {
+    IntVar: 1
+  }
+}
+Entries {
+  Key {
+    StringVar: "UPGC_Gate"
+  }
+  SimpleValue {
+    StringVar: "Damaged Gate"
+  }
+}
+Entries {
+  Key {
+    StringVar: "CUR_coins"
+  }
+  SimpleValue {
+    IntVar: 500
+  }
+}
+Entries {
+  Key {
+    StringVar: "Penny Produce"
+  }
+  SimpleValue {
+    Table {
+    }
+  }
+}
+Entries {
+  Key {
+    StringVar: "__GlobalStore_V"
+  }
+  SimpleValue {
+    IntVar: 1
+  }
+}
+Entries {
+  Key {
+    StringVar: "Better Breads"
+  }
+  SimpleValue {
+    Table {
     }
   }
 }
@@ -622,50 +431,26 @@ Entries {
 }
 Entries {
   Key {
-    StringVar: "FrontYardDebris__v"
+    StringVar: "UPG_AddedUpgrades"
   }
   SimpleValue {
-    IntVar: 0
+    StringVar: "Damaged Fruit Stand%Locked Land 1%Locked Land 2%Locked Land 3%Locked Land 4%Locked Land 5%Locked Land 6%Damaged Gate%Damaged House"
   }
 }
 Entries {
   Key {
-    StringVar: "FrontYardPlaceables"
+    StringVar: "UPGC_House"
   }
   SimpleValue {
-    StringVar: ""
+    StringVar: "Damaged House"
   }
 }
 Entries {
   Key {
-    StringVar: "Penny Produce_V"
+    StringVar: "PSV"
   }
   SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "Fruit Stand_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "Sunshine Seeds_V"
-  }
-  SimpleValue {
-    IntVar: 1
-  }
-}
-Entries {
-  Key {
-    StringVar: "CUR_coins"
-  }
-  SimpleValue {
-    IntVar: 1025
+    IntVar: 2
   }
 }
 Entries {
@@ -675,5 +460,37 @@ Entries {
   SimpleValue {
     Table {
     }
+  }
+}
+Entries {
+  Key {
+    StringVar: "FrontYardDebris"
+  }
+  SimpleValue {
+    StringVar: "babaaa"
+  }
+}
+Entries {
+  Key {
+    StringVar: "Tool Truck_V"
+  }
+  SimpleValue {
+    IntVar: 1
+  }
+}
+Entries {
+  Key {
+    StringVar: "INV_hotbar__v"
+  }
+  SimpleValue {
+    IntVar: 0
+  }
+}
+Entries {
+  Key {
+    StringVar: "Better Breads_V"
+  }
+  SimpleValue {
+    IntVar: 1
   }
 }
